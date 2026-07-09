@@ -33,7 +33,8 @@ export const site = {
 // --- Church Center (Planning Center) --------------------------------------
 // These handle giving, forms, registrations, groups, and check-in.
 // The site links directly to them rather than rebuilding them.
-const CC = "https://cchammonton.churchcenter.com";
+export const CHURCH_CENTER_BASE = "https://cchammonton.churchcenter.com";
+const CC = CHURCH_CENTER_BASE;
 
 export const churchCenter = {
   home: `${CC}/pages/home`,
@@ -47,11 +48,49 @@ export const churchCenter = {
     children: `${CC}/people/forms/517537`,      // Children's Ministry
     contact: `${CC}/people/forms/554231`,       // CONFIRM what this form is
   },
-  registrations: {
-    eventA: `${CC}/registrations/events/3532994`, // CONFIRM name
-    eventB: `${CC}/registrations/events/3653618`, // CONFIRM name
-  },
+  registrationsIndex: `${CC}/registrations/events`,
 };
+
+// =============================================================================
+//  ★ OPEN REGISTRATIONS — edit this list when sign-ups change
+// =============================================================================
+//  These cards show on the homepage and on /events.
+//
+//  TO ADD an event:     copy a block below, change the fields, commit.
+//  TO REMOVE an event:  delete its block (or set  open: false  to gray it out).
+//  TO REORDER:          drag blocks up or down. Top of list shows first.
+//
+//  href — Open the event in Church Center and copy the address bar URL.
+//         It looks like:  .../registrations/events/3532994
+//         If you don't have the direct link yet, leave the default below and
+//         it will point at the full registrations list. Nothing breaks.
+//
+//  Commit to `main` and Vercel redeploys in about a minute.
+// =============================================================================
+
+export const registrations = [
+  {
+    title: "Summer Bible Club 2026",
+    when: "Summer 2026",
+    blurb: "A week of Bible stories, games, and friendship for kids across Hammonton.",
+    href: `${CC}/registrations/events`,   // ← paste the direct event URL here
+    open: true,
+  },
+  {
+    title: "VBS 2026 \u2014 Wonder Junction",
+    when: "Summer 2026",
+    blurb: "Vacation Bible School: music, crafts, and discovering the wonder of God's Word.",
+    href: `${CC}/registrations/events`,   // ← paste the direct event URL here
+    open: true,
+  },
+  {
+    title: "AWANA 2026\u20132027",
+    when: "School year 2026\u20132027",
+    blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
+    href: `${CC}/registrations/events`,   // ← paste the direct event URL here
+    open: true,
+  },
+];
 
 // --- Social ---------------------------------------------------------------
 export const social = {
@@ -84,14 +123,6 @@ export const events = [
     href: "https://mayfairtravel.wetravel.com/trips/summer-2027-cc-hammonton-biblical-mediterranean-cruise-stephen-s-gate-tours-0325083818",
     cta: "See the itinerary",
     tag: "Travel",
-  },
-  {
-    title: "Upcoming church event",              // CONFIRM name
-    when: "See Church Center for dates",
-    blurb: "Registration is open through Church Center.",
-    href: churchCenter.registrations.eventA,
-    cta: "Register",
-    tag: "Register",
   },
 ];
 
