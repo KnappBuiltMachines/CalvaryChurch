@@ -1,0 +1,68 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { site } from "../app/site";
+
+const LINKS = [
+  { href: "/visit", label: "Plan a visit" },
+  { href: "/about", label: "About", children: [
+    { href: "/about", label: "Who we are" },
+    { href: "/beliefs", label: "Statement of faith" },
+    { href: "/visit", label: "Where & when" },
+  ]},
+  { href: "/watch", label: "Watch" },
+  { href: "/ministries", label: "Ministries" },
+  { href: "/events", label: "Events" },
+  { href: "/connect", label: "Connect" },
+  { href: "/give", label: "Give" },
+];
+
+export default function Nav() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <nav className="nav">
+      <div className="wrap nav-inner">
+        <Link href="/" className="brand" onClick={close} aria-label={site.name}>
+          <span className="brand-mark" aria-hidden="true">CC</span>
+          <span className="brand-name">{site.shortName}</span>
+        </Link>
+
+        <div className={open ? "nav-links open" : "nav-links"}>
+          {LINKS.map((l) =>
+            l.children ? (
+              <div className="has-drop" key={l.label}>
+                <Link href={l.href} onClick={close}>{l.label}</Link>
+                <div className="drop">
+                  {l.children.map((c) => (
+                    <Link key={c.label} href={c.href} onClick={close}>{c.label}</Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link key={l.label} href={l.href} onClick={close}>{l.label}</Link>
+            )
+          )}
+          <Link href="/visit" className="btn btn-primary nav-cta" onClick={close}>
+            Plan your visit
+          </Link>
+        </div>
+
+        <button
+          className="nav-toggle"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+          )}
+        </button>
+      </div>
+    </nav>
+  );
+}
