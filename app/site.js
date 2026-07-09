@@ -71,23 +71,27 @@ export const churchCenter = {
 export const registrations = [
   {
     title: "Summer Bible Club 2026",
-    when: "Summer 2026",
-    blurb: "A week of Bible stories, games, and friendship for kids across Hammonton.",
-    href: `${CC}/registrations/events`,   // ← paste the direct event URL here
+    when: "June 3 \u2013 September 12, 2026",
+    blurb: "Bible lessons, games, and outdoor fun all summer long for kids in Hammonton.",
+    image: "/events/summer-bible-club-2026.jpg",
+    href: `${CC}/registrations/events/3653618`,
+    featured: true,
     open: true,
   },
   {
     title: "VBS 2026 \u2014 Wonder Junction",
-    when: "Summer 2026",
-    blurb: "Vacation Bible School: music, crafts, and discovering the wonder of God's Word.",
-    href: `${CC}/registrations/events`,   // ← paste the direct event URL here
+    when: "July 6\u201310, 2026",
+    blurb: "Marvel at Jesus, live for His glory. A week of music, crafts, and discovery.",
+    image: "/events/vbs-2026-wonder-junction.jpg",
+    href: `${CC}/registrations/events/3532994`,
     open: true,
   },
   {
     title: "AWANA 2026\u20132027",
-    when: "School year 2026\u20132027",
+    when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
-    href: `${CC}/registrations/events`,   // ← paste the direct event URL here
+    image: "/events/awana-2026-2027.jpg",
+    href: `${CC}/registrations/events/3716027`,
     open: true,
   },
 ];
