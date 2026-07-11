@@ -1,40 +1,14 @@
 import Link from "next/link";
-import { site, churchCenter, events } from "./site";
+import { site } from "./site";
 import SocialRow from "../components/SocialRow";
 import { SectionHead } from "../components/ui";
-import { IcCoffee, IcKids, IcMap, IcPray, IcConnect, IcHeart, IcBook, IcPlay, IcArrow } from "../components/icons";
+import { IcCoffee, IcKids, IcMap, IcPlay } from "../components/icons";
 
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-arch" aria-hidden="true" />
-        <div className="wrap hero-inner">
-          <span className="eyebrow">Calvary Chapel &middot; {site.town}</span>
-          <h1>There&rsquo;s a seat saved for you.</h1>
-          <p className="hero-tag serif-italic">{site.tagline}.</p>
-          <p className="hero-sub">
-            Whoever you are and wherever you&rsquo;ve been, you&rsquo;re welcome here. Join us this
-            Sunday, or watch online first &mdash; no pressure either way.
-          </p>
-          <div className="hero-actions">
-            <Link href="/visit" className="btn btn-primary">Plan your first visit</Link>
-            <Link href="/watch" className="btn btn-ghost"><IcPlay width={20} height={20} /> Watch a message</Link>
-          </div>
-          <div className="hero-times">
-            {site.services.map((s, i) => (
-              <span key={s.day}>
-                {i > 0 && <span className="sep" style={{ marginRight: 22 }}>&middot;</span>}
-                <span className="lbl">{s.day} </span><strong>{s.time}</strong>
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PASTOR'S WELCOME */}
-      <section className="section">
+      {/* PASTOR'S WELCOME — white */}
+      <section className="section section-alt">
         <div className="wrap">
           <div className="welcome-split">
             <div className="welcome-photo">
@@ -61,7 +35,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEW HERE */}
+      {/* HERO — cream */}
+      <section className="hero">
+        <div className="hero-arch" aria-hidden="true" />
+        <div className="wrap hero-inner">
+          <span className="eyebrow">Calvary Chapel &middot; {site.town}</span>
+          <h1>There&rsquo;s a seat saved for you.</h1>
+          <p className="hero-tag serif-italic">{site.tagline}.</p>
+          <p className="hero-sub">
+            Whoever you are and wherever you&rsquo;ve been, you&rsquo;re welcome here. Join us this
+            Sunday, or watch online first &mdash; no pressure either way.
+          </p>
+          <div className="hero-actions">
+            <Link href="/visit" className="btn btn-primary">Plan your first visit</Link>
+            <Link href="/watch" className="btn btn-ghost"><IcPlay width={20} height={20} /> Watch a message</Link>
+          </div>
+          <div className="hero-times">
+            {site.services.map((s, i) => (
+              <span key={s.day}>
+                {i > 0 && <span className="sep" style={{ marginRight: 22 }}>&middot;</span>}
+                <span className="lbl">{s.day} </span><strong>{s.time}</strong>
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NEW HERE — white */}
       <section className="section section-alt">
         <div className="wrap">
           <SectionHead center eyebrow="New here?" title="Everything you're wondering, answered."
@@ -92,80 +92,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONNECT WITH US — social */}
-      <section className="section section-alt">
+      {/* STAY CONNECTED — cream */}
+      <section className="section">
         <div className="wrap">
           <SectionHead center eyebrow="Stay connected" title="Follow along during the week." />
           <SocialRow />
-        </div>
-      </section>
-
-      {/* NEXT STEPS — real Church Center forms */}
-      <section className="section section-alt" id="connect">
-        <div className="wrap">
-          <SectionHead center eyebrow="Take a next step"
-            title="However you're doing, there's a place to go from here." />
-          <div className="steps">
-            <a className="step" href={churchCenter.forms.prayer}>
-              <span className="ic"><IcPray width={28} height={28} /></span>
-              <h3>Get prayer</h3>
-              <p>Share what you&rsquo;re carrying. Our team will pray with you and for you.</p>
-              <span className="go">Request prayer <IcArrow width={15} height={15} /></span>
-            </a>
-            <a className="step" href={churchCenter.forms.connected}>
-              <span className="ic"><IcConnect width={28} height={28} /></span>
-              <h3>Get connected</h3>
-              <p>Build real friendships and find your place in the family beyond Sunday morning.</p>
-              <span className="go">Get connected <IcArrow width={15} height={15} /></span>
-            </a>
-            <a className="step" href={churchCenter.forms.discipled}>
-              <span className="ic"><IcBook width={28} height={28} /></span>
-              <h3>Get discipled</h3>
-              <p>New to following Jesus, or ready to go deeper? Let&rsquo;s take the next step together.</p>
-              <span className="go">Get discipled <IcArrow width={15} height={15} /></span>
-            </a>
-            <Link className="step" href="/griefshare">
-              <span className="ic"><IcHeart width={28} height={28} /></span>
-              <h3>GriefShare</h3>
-              <p>Walking through loss? Find support and hope alongside others who understand.</p>
-              <span className="go">Learn more <IcArrow width={15} height={15} /></span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED EVENTS */}
-      <section className="section">
-        <div className="wrap">
-          <SectionHead center eyebrow="What's coming up" title="Life together, on the calendar." />
-          <div className="event-list">
-            {events.map((e) => (
-              <article className="event" key={e.title}>
-                <div>
-                  <span className="tag">{e.tag}</span>
-                  <h3>{e.title}</h3>
-                  <span className="when">{e.when}</span>
-                  <p>{e.blurb}</p>
-                </div>
-                <a href={e.href} className="btn btn-ghost">{e.cta}</a>
-              </article>
-            ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: 34 }}>
-            <Link href="/events" className="btn btn-primary">See the full calendar</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* GIVE */}
-      <section className="section">
-        <div className="wrap">
-          <div className="give">
-            <span className="eyebrow">Give</span>
-            <h2>Generosity that changes lives.</h2>
-            <p>Your giving fuels ministry here in Hammonton and far beyond. Give securely through Church Center &mdash; one time or recurring.</p>
-            <a href={churchCenter.giving} className="btn">Give online</a>
-          </div>
         </div>
       </section>
     </>
