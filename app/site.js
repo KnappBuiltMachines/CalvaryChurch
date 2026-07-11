@@ -60,10 +60,12 @@ export const churchCenter = {
 //  TO REMOVE an event:  delete its block (or set  open: false  to gray it out).
 //  TO REORDER:          drag blocks up or down. Top of list shows first.
 //
-//  href — Open the event in Church Center and copy the address bar URL.
-//         It looks like:  .../registrations/events/3532994
-//         If you don't have the direct link yet, leave the default below and
-//         it will point at the full registrations list. Nothing breaks.
+//  href   Open the event in Church Center and copy the URL from the address
+//         bar. It looks like:  .../registrations/events/3532994
+//
+//  image  Save the event artwork from Church Center into  public/events/
+//         then reference it here as  "/events/your-file.jpg"
+//         Leave it out entirely and the card shows an icon instead.
 //
 //  Commit to `main` and Vercel redeploys in about a minute.
 // =============================================================================
@@ -101,7 +103,7 @@ export const social = {
   youtube: "https://www.youtube.com/channel/UCZp40TlQUPF2tizVXxRqzcw",
   instagram: "https://www.instagram.com/cchammonton/",
   facebook: "https://www.facebook.com/cchammonton",
-  twitter: "https://twitter.com/cchammonton",
+  twitter: "https://x.com/cchammonton",
 };
 
 // --- Google Calendar ------------------------------------------------------

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { site, churchCenter, events, latestMessage } from "./site";
+import { site, churchCenter, events, registrations, latestMessage } from "./site";
+import RegistrationList from "../components/RegistrationList";
+import SocialRow from "../components/SocialRow";
 import { SectionHead } from "../components/ui";
 import { IcCoffee, IcKids, IcMap, IcPray, IcConnect, IcHeart, IcBook, IcPlay, IcArrow } from "../components/icons";
 
@@ -65,19 +67,37 @@ export default function Home() {
 
       {/* PASTOR'S WELCOME */}
       <section className="section">
-        <div className="wrap prose" style={{ textAlign: "center" }}>
-          <span className="eyebrow">A word from our pastor</span>
-          <h2 style={{ fontSize: "clamp(28px,4vw,40px)", margin: "14px 0 26px" }}>Welcome home.</h2>
-          <p style={{ color: "var(--muted)" }}>
-            Let me personally welcome you, and tell you how excited I am about your interest in our
-            church. On behalf of my wife and myself, I would like to invite you to worship the Lord
-            with us and enjoy the fellowship of like-minded believers. It is our prayer for you that
-            you grow in grace and have a deeper understanding of God&rsquo;s love for you.
-          </p>
-          <p className="signature">&mdash; {site.pastors}</p>
-          <div className="hero-actions" style={{ marginTop: 30 }}>
-            <Link href="/about" className="btn btn-ghost">Read our story</Link>
+        <div className="wrap">
+          <div className="welcome-split">
+            <div className="welcome-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/about/pastors.png" alt="Pastor Vince and Dianne Lombardo" />
+            </div>
+            <div className="welcome-body">
+              <span className="eyebrow">A word from our pastor</span>
+              <h2 style={{ fontSize: "clamp(28px,4vw,38px)", margin: "12px 0 22px" }}>Welcome home.</h2>
+              <p>
+                As Pastor of Calvary Chapel of Hammonton, let me personally welcome you to our website,
+                and tell you how excited I am about your interest in our church! I hope that our site
+                will provide you with the information you&rsquo;re looking for, but if not, please feel
+                free to contact us at <a href={`mailto:${site.email}`}>{site.email}</a>.
+              </p>
+              <p>
+                On behalf of my wife and myself, I would like to personally invite you to worship the
+                Lord with us, and enjoy the fellowship of like-minded believers. It is our prayer for
+                you that you grow in grace and have a deeper understanding of God&rsquo;s love for you!
+              </p>
+              <p className="signature serif-italic">Pastor Vince and Dianne Lombardo</p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* CONNECT WITH US — social */}
+      <section className="section section-alt">
+        <div className="wrap">
+          <SectionHead center eyebrow="Stay connected" title="Follow along during the week." />
+          <SocialRow />
         </div>
       </section>
 
@@ -137,8 +157,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EVENTS */}
+      {/* OPEN REGISTRATIONS — live from Church Center */}
       <section className="section section-alt">
+        <div className="wrap">
+          <SectionHead center eyebrow="Sign up" title="Registration is open." />
+          <RegistrationList items={registrations} />
+        </div>
+      </section>
+
+      {/* FEATURED EVENTS */}
+      <section className="section">
         <div className="wrap">
           <SectionHead center eyebrow="What's coming up" title="Life together, on the calendar." />
           <div className="event-list">
