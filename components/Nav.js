@@ -26,8 +26,8 @@ export default function Nav() {
     <nav className="nav">
       <div className="wrap nav-inner">
         <Link href="/" className="brand" onClick={close} aria-label={site.name}>
-          <span className="brand-mark" aria-hidden="true">CC</span>
-          <span className="brand-name">{site.shortName}</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/brand/logo.png" alt={site.name} className="brand-logo" />
         </Link>
 
         <div className={open ? "nav-links open" : "nav-links"}>

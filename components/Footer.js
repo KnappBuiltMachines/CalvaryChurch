@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <div className="f-brand">
-              <span className="brand-mark" aria-hidden="true">CC</span>
-              <span className="brand-name">{site.name}</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/logo-white.png" alt={site.name} className="f-logo" />
             </div>
             <p style={{ color: "#A9BAB0", maxWidth: 320 }}>
               {site.tagline}. Come as you are &mdash; there&rsquo;s a seat saved for you.
