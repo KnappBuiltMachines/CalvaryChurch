@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { site, churchCenter, events, registrations, latestMessage } from "./site";
-import RegistrationList from "../components/RegistrationList";
+import { site, churchCenter, events } from "./site";
 import SocialRow from "../components/SocialRow";
 import { SectionHead } from "../components/ui";
 import { IcCoffee, IcKids, IcMap, IcPray, IcConnect, IcHeart, IcBook, IcPlay, IcArrow } from "../components/icons";
@@ -34,6 +33,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PASTOR'S WELCOME */}
+      <section className="section">
+        <div className="wrap">
+          <div className="welcome-split">
+            <div className="welcome-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/about/pastors.png" alt="Pastor Vince and Dianne Lombardo" />
+            </div>
+            <div className="welcome-body">
+              <span className="eyebrow">A word from our pastor</span>
+              <h2 style={{ fontSize: "clamp(28px,4vw,38px)", margin: "12px 0 22px" }}>Welcome home.</h2>
+              <p>
+                As Pastor of Calvary Chapel of Hammonton, let me personally welcome you to our website,
+                and tell you how excited I am about your interest in our church! I hope that our site
+                will provide you with the information you&rsquo;re looking for, but if not, please feel
+                free to contact us at <a href={`mailto:${site.email}`}>{site.email}</a>.
+              </p>
+              <p>
+                On behalf of my wife and myself, I would like to personally invite you to worship the
+                Lord with us, and enjoy the fellowship of like-minded believers. It is our prayer for
+                you that you grow in grace and have a deeper understanding of God&rsquo;s love for you!
+              </p>
+              <p className="signature serif-italic">Pastor Vince and Dianne Lombardo</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* NEW HERE */}
       <section className="section section-alt">
         <div className="wrap">
@@ -61,34 +88,6 @@ export default function Home() {
                 <p>Free parking right out front on Egg Harbor Rd., and a friendly face at the door to point you where you need to go.</p>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      {/* PASTOR'S WELCOME */}
-      <section className="section">
-        <div className="wrap">
-          <div className="welcome-split">
-            <div className="welcome-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/about/pastors.png" alt="Pastor Vince and Dianne Lombardo" />
-            </div>
-            <div className="welcome-body">
-              <span className="eyebrow">A word from our pastor</span>
-              <h2 style={{ fontSize: "clamp(28px,4vw,38px)", margin: "12px 0 22px" }}>Welcome home.</h2>
-              <p>
-                As Pastor of Calvary Chapel of Hammonton, let me personally welcome you to our website,
-                and tell you how excited I am about your interest in our church! I hope that our site
-                will provide you with the information you&rsquo;re looking for, but if not, please feel
-                free to contact us at <a href={`mailto:${site.email}`}>{site.email}</a>.
-              </p>
-              <p>
-                On behalf of my wife and myself, I would like to personally invite you to worship the
-                Lord with us, and enjoy the fellowship of like-minded believers. It is our prayer for
-                you that you grow in grace and have a deeper understanding of God&rsquo;s love for you!
-              </p>
-              <p className="signature serif-italic">Pastor Vince and Dianne Lombardo</p>
-            </div>
           </div>
         </div>
       </section>
@@ -132,36 +131,6 @@ export default function Home() {
               <span className="go">Learn more <IcArrow width={15} height={15} /></span>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* WATCH */}
-      <section className="section">
-        <div className="wrap">
-          <SectionHead eyebrow="Watch &amp; listen" title="Catch the latest message."
-            lead="Missed a Sunday, or want to see what we're about before you visit? Watch anytime." />
-          <div className="watch-card">
-            <a className="watch-thumb" href={latestMessage.watchUrl} aria-label="Play the latest message">
-              <IcPlay width={54} height={54} />
-            </a>
-            <div className="watch-meta">
-              <span className="eyebrow">{latestMessage.series}</span>
-              <h3>{latestMessage.title}</h3>
-              <p className="by">{latestMessage.speaker}</p>
-              <div className="hero-actions" style={{ justifyContent: "flex-start", marginTop: 22 }}>
-                <a href={latestMessage.watchUrl} className="btn btn-primary"><IcPlay width={20} height={20} /> Watch on YouTube</a>
-                <Link href="/watch" className="btn btn-ghost">All messages</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OPEN REGISTRATIONS — live from Church Center */}
-      <section className="section section-alt">
-        <div className="wrap">
-          <SectionHead center eyebrow="Sign up" title="Registration is open." />
-          <RegistrationList items={registrations} />
         </div>
       </section>
 
