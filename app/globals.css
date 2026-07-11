@@ -373,6 +373,38 @@ img { max-width: 100%; display: block; }
   border: 1px solid #E6D7B4; border-radius: var(--radius); padding: 22px 26px;
   font-size: 16px; color: #6A5320;
 }
+.note a { color: #6A5320; font-weight: 600; text-decoration: underline; }
+
+/* ---------- Giving options ---------- */
+.give-option {
+  max-width: 760px; margin: 0 auto;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 38px 40px;
+  box-shadow: var(--shadow);
+}
+.section-alt .give-option { background: var(--paper); }
+.give-option-head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 22px; }
+.give-option-head .ic {
+  flex: none; width: 56px; height: 56px; border-radius: 14px;
+  display: grid; place-items: center;
+  background: var(--pine-soft); color: var(--pine);
+}
+.give-option-head h2 { font-size: clamp(24px, 3.2vw, 32px); margin: 0; color: var(--ink); }
+.give-lede { margin: 8px 0 0; font-size: 17px; color: var(--pine); font-weight: 500; }
+.give-option > p { font-size: 17px; color: var(--muted); margin: 0 0 18px; }
+.give-funds { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 12px; }
+.give-funds li {
+  position: relative; padding-left: 26px; font-size: 16px; color: var(--muted); line-height: 1.55;
+}
+.give-funds li::before {
+  content: ""; position: absolute; left: 0; top: 9px;
+  width: 10px; height: 10px; border-radius: 50%; background: var(--gold);
+}
+.give-funds strong { color: var(--ink); }
+@media (max-width: 560px) {
+  .give-option { padding: 30px 24px; }
+  .give-option-head { flex-direction: column; gap: 14px; }
+}
 
 @media (max-width: 900px) {
   .drop { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; background: transparent; padding: 0 0 0 14px; min-width: 0; }

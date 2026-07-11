@@ -51,6 +51,10 @@ export const churchCenter = {
   registrationsIndex: `${CC}/registrations/events`,
 };
 
+// Third-party giving option (crypto, PayPal, stocks, Apple Pay, etc.)
+export const everyOrgGiving =
+  "https://www.every.org/calvary-chapel-of-hammonton?utm_campaign=donate-link#/donate/bank";
+
 // =============================================================================
 //  ★ OPEN REGISTRATIONS — edit this list when sign-ups change
 // =============================================================================

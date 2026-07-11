@@ -5,7 +5,6 @@ import Link from "next/link";
 import { site } from "../app/site";
 
 const LINKS = [
-  { href: "/visit", label: "Plan a visit" },
   { href: "/about", label: "About", children: [
     { href: "/about", label: "Who we are" },
     { href: "/beliefs", label: "Statement of faith" },

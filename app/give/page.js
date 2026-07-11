@@ -1,10 +1,10 @@
-import { churchCenter, site } from "../site";
-import { PageHeader, SectionHead } from "../../components/ui";
-import { IcGift, IcPhoneApp, IcMail } from "../../components/icons";
+import { churchCenter, everyOrgGiving, site } from "../site";
+import { PageHeader } from "../../components/ui";
+import { IcGift, IcHeart } from "../../components/icons";
 
 export const metadata = {
   title: "Give",
-  description: "Give securely to Calvary Chapel of Hammonton online, through the Church Center app, or in person.",
+  description: "Give to Calvary Chapel of Hammonton \u2014 100% of your gift supports the church, or give through Every.org by crypto, PayPal, stocks, Apple Pay, and more.",
 };
 
 export default function Give() {
@@ -13,62 +13,70 @@ export default function Give() {
       <PageHeader
         eyebrow="Give"
         title="Generosity that changes lives."
-        lead="Everything we have is a gift. Giving is how we say thank you — and how ministry happens here in Hammonton and far beyond."
+        lead="Everything we have is a gift. Giving is how ministry happens here in Hammonton and far beyond. Choose the option that works best for you below."
       />
 
-      <section className="section">
-        <div className="wrap prose">
-          <blockquote>
-            <p>God loves a cheerful giver.</p>
-            <span className="ref">2 Corinthians 9:7</span>
-          </blockquote>
-          <p>
-            Your giving supports the teaching of God&rsquo;s Word, the care of this church family, our
-            Children&rsquo;s Ministry, GriefShare, and the work of sharing the gospel with those near
-            and far. Thank you for partnering with us.
-          </p>
-        </div>
-      </section>
-
+      {/* OPTION 1 — Church Center (white) */}
       <section className="section section-alt">
         <div className="wrap">
-          <SectionHead center eyebrow="How to give" title="Three simple ways." />
-          <div className="connect-grid">
-            <a className="connect-card" href={churchCenter.giving}>
+          <div className="give-option">
+            <div className="give-option-head">
               <span className="ic"><IcGift width={30} height={30} /></span>
-              <h3>Online</h3>
-              <p>Give once or set up recurring giving through our secure Church Center giving page.</p>
-              <span className="go">Give now &rarr;</span>
+              <div>
+                <h2>Calvary Chapel</h2>
+                <p className="give-lede">100% of your contribution goes straight to supporting our church.</p>
+              </div>
+            </div>
+            <p>
+              Donating to Calvary Chapel of Hammonton supports a community dedicated to bringing honor
+              and glory to God through various ministries and outreach programs. Your contributions
+              help fund:
+            </p>
+            <ul className="give-funds">
+              <li><strong>Community Outreach</strong> &mdash; programs that provide support and assistance to those in need within the local community.</li>
+              <li><strong>Youth &amp; Children&rsquo;s Ministries</strong> &mdash; activities and educational programs that nurture the spiritual growth of young members.</li>
+              <li><strong>Missionary Work</strong> &mdash; efforts to spread the message of faith and provide aid to communities around the world.</li>
+              <li><strong>Church Maintenance &amp; Development</strong> &mdash; ensuring the church facilities are well-maintained and can continue to serve as a place of worship and community gathering.</li>
+            </ul>
+            <a href={churchCenter.giving} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Give through Church Center &rarr;
             </a>
-            <a className="connect-card" href={churchCenter.home}>
-              <span className="ic"><IcPhoneApp width={30} height={30} /></span>
-              <h3>In the app</h3>
-              <p>Download the Church Center app and give from your phone in a few taps, any time.</p>
-              <span className="go">Open Church Center &rarr;</span>
-            </a>
-            <a className="connect-card" href={`mailto:${site.email}`}>
-              <span className="ic"><IcMail width={30} height={30} /></span>
-              <h3>In person or by mail</h3>
-              <p>Give during any service, or mail a check to the church office at {site.address.line1}, {site.address.line2}.</p>
-              <span className="go">Contact the office &rarr;</span>
-            </a>
-          </div>
-
-          <div className="note" style={{ marginTop: 44 }}>
-            <strong>Secure and private.</strong> Online giving is processed by Church Center (Planning
-            Center), not stored on this website. Your contribution statements are available any time
-            inside your Church Center account.
           </div>
         </div>
       </section>
 
+      {/* OPTION 2 — Every.org (cream) */}
       <section className="section">
         <div className="wrap">
-          <div className="give">
-            <span className="eyebrow">Ready?</span>
-            <h2>Give securely in under a minute.</h2>
-            <p>One time or recurring, by card or bank transfer &mdash; whatever works for you.</p>
-            <a href={churchCenter.giving} className="btn">Give online</a>
+          <div className="give-option">
+            <div className="give-option-head">
+              <span className="ic"><IcHeart width={30} height={30} /></span>
+              <div>
+                <h2>Every.org</h2>
+                <p className="give-lede">A third-party option that lets you give in multiple ways &mdash; crypto, PayPal, stocks, Apple Pay, and more.</p>
+              </div>
+            </div>
+            <p>
+              100% of your donation is tax-deductible to the extent allowed by US law. Your donation is
+              made to Every.org, a tax-exempt US 501(c)(3) charity that grants unrestricted funds to
+              Calvary Chapel of Hammonton on your behalf. As a legal matter, Every.org must provide any
+              donations to Calvary Chapel of Hammonton on an unrestricted basis, regardless of any
+              designations or restrictions made by you.
+            </p>
+            <a href={everyOrgGiving} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Give through Every.org &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* IN PERSON / BY MAIL (white) */}
+      <section className="section section-alt">
+        <div className="wrap">
+          <div className="note">
+            <strong>Prefer to give in person?</strong> You can give during any service, or mail a check
+            to the church office at {site.address.line1}, {site.address.line2}. Questions about giving?
+            Email us at <a href={`mailto:${site.email}`}>{site.email}</a>.
           </div>
         </div>
       </section>
