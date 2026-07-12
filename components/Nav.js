@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "../app/site";
 
 const LINKS = [
@@ -20,6 +21,15 @@ const LINKS = [
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const pathname = usePathname();
+
+  // A route is "active" when it matches exactly or is a sub-path.
+  const isActive = (href) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+
+  // A top-level item is active if its own route or any of its children match.
+  const groupActive = (l) =>
+    isActive(l.href) || (l.children && l.children.some((c) => isActive(c.href)));
 
   return (
     <nav className="nav">
@@ -33,15 +43,38 @@ export default function Nav() {
           {LINKS.map((l) =>
             l.children ? (
               <div className="has-drop" key={l.label}>
-                <Link href={l.href} onClick={close}>{l.label}</Link>
+                <Link
+                  href={l.href}
+                  onClick={close}
+                  className={groupActive(l) ? "active" : undefined}
+                  aria-current={groupActive(l) ? "page" : undefined}
+                >
+                  {l.label}
+                </Link>
                 <div className="drop">
                   {l.children.map((c) => (
-                    <Link key={c.label} href={c.href} onClick={close}>{c.label}</Link>
+                    <Link
+                      key={c.label}
+                      href={c.href}
+                      onClick={close}
+                      className={isActive(c.href) ? "active" : undefined}
+                      aria-current={isActive(c.href) ? "page" : undefined}
+                    >
+                      {c.label}
+                    </Link>
                   ))}
                 </div>
               </div>
             ) : (
-              <Link key={l.label} href={l.href} onClick={close}>{l.label}</Link>
+              <Link
+                key={l.label}
+                href={l.href}
+                onClick={close}
+                className={isActive(l.href) ? "active" : undefined}
+                aria-current={isActive(l.href) ? "page" : undefined}
+              >
+                {l.label}
+              </Link>
             )
           )}
           <Link href="/visit" className="btn btn-primary nav-cta" onClick={close}>

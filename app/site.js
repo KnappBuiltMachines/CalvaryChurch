@@ -85,14 +85,6 @@ export const registrations = [
     open: true,
   },
   {
-    title: "VBS 2026 \u2014 Wonder Junction",
-    when: "July 6\u201310, 2026",
-    blurb: "Marvel at Jesus, live for His glory. A week of music, crafts, and discovery.",
-    image: "/events/vbs-2026-wonder-junction.jpg",
-    href: `${CC}/registrations/events/3532994`,
-    open: true,
-  },
-  {
     title: "AWANA 2026\u20132027",
     when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
