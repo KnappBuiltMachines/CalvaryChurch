@@ -7,7 +7,8 @@ export const metadata = {
   description: "GriefShare at Calvary Chapel of Hammonton — support and hope for anyone grieving the death of someone close.",
 };
 
-const GRIEFSHARE_EVENT = "https://find.griefshare.org/events/295440";
+// Our GriefShare ministry listing (group schedule, contact info, and sign-up).
+const GRIEFSHARE_MINISTRY = "https://find.griefshare.org/ministries/199420";
 
 export default function GriefShare() {
   return (
@@ -38,23 +39,19 @@ export default function GriefShare() {
         </div>
       </section>
 
-      {/* The real upcoming seminar */}
+      {/* More information */}
       <section className="section section-alt">
         <div className="wrap">
-          <SectionHead center eyebrow="Coming up" title="Loss of a Spouse" />
-          <div className="event-list">
-            <article className="event">
-              <div>
-                <span className="tag">Seminar</span>
-                <h3>Loss of a Spouse</h3>
-                <span className="when">August 16, 2026 &middot; 1:00pm ET</span>
-                <p>
-                  A one-day seminar for anyone grieving the death of a husband or wife. Hosted at{" "}
-                  {site.name}. Contact Rita Cohen for more information.
-                </p>
-              </div>
-              <a href={GRIEFSHARE_EVENT} className="btn btn-primary">Register or learn more</a>
-            </article>
+          <SectionHead
+            center
+            eyebrow="Learn more"
+            title="Find our GriefShare group."
+            lead="See meeting times, session details, and how to sign up on our GriefShare ministry page."
+          />
+          <div style={{ textAlign: "center" }}>
+            <a href={GRIEFSHARE_MINISTRY} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              More information
+            </a>
           </div>
           <div className="note" style={{ marginTop: 36 }}>
             <strong>Not sure if it&rsquo;s for you?</strong> Call the church office at{" "}

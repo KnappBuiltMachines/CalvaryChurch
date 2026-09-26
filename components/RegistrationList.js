@@ -4,7 +4,11 @@ export default function RegistrationList({ items }) {
   if (!items?.length) return null;
 
   return (
-    <div className="reg-grid">
+    <div
+      className="reg-grid"
+      // A lone card centers instead of sitting in the left column of the grid.
+      style={items.length === 1 ? { gridTemplateColumns: "minmax(0, 420px)", justifyContent: "center" } : undefined}
+    >
       {items.map((e) => (
         <a className="reg-card" href={e.href} key={e.title}>
           {e.image ? (

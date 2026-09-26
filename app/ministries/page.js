@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { churchCenter } from "../site";
-import { PageHeader, SectionHead } from "../../components/ui";
+import { PageHeader } from "../../components/ui";
 import { IcKids, IcHeart, IcBook, IcConnect, IcPray, IcArrow } from "../../components/icons";
 
 export const metadata = {
@@ -70,16 +70,6 @@ export default function Ministries() {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt">
-        <div className="wrap">
-          <SectionHead center eyebrow="Serve" title="There's room for you to give, not just receive."
-            lead="Greeters, worship, kids' ministry, hospitality, setup — the body works when every part does." />
-          <div style={{ textAlign: "center" }}>
-            <a href={churchCenter.forms.connected} className="btn btn-primary">Tell us how you&rsquo;d like to serve</a>
           </div>
         </div>
       </section>

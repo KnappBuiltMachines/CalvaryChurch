@@ -76,20 +76,12 @@ export const everyOrgGiving =
 
 export const registrations = [
   {
-    title: "Summer Bible Club 2026",
-    when: "June 3 \u2013 September 12, 2026",
-    blurb: "Bible lessons, games, and outdoor fun all summer long for kids in Hammonton.",
-    image: "/events/summer-bible-club-2026.jpg",
-    href: `${CC}/registrations/events/3653618`,
-    featured: true,
-    open: true,
-  },
-  {
     title: "AWANA 2026\u20132027",
     when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
     image: "/events/awana-2026-2027.jpg",
     href: `${CC}/registrations/events/3716027`,
+    featured: true,
     open: true,
   },
 ];
