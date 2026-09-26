@@ -1,5 +1,5 @@
 // =============================================================================
-//  Calvary Chapel of Hammonton — site configuration
+//  Calvary Chapel of Hammonton â€” site configuration
 //  ONE place to edit church facts, links, events, and sermons.
 //  Values below were pulled from the live cchammonton.org pages.
 //  Anything marked  // CONFIRM  needs a human to verify.
@@ -56,7 +56,7 @@ export const everyOrgGiving =
   "https://www.every.org/calvary-chapel-of-hammonton?utm_campaign=donate-link#/donate/bank";
 
 // =============================================================================
-//  ★ OPEN REGISTRATIONS — edit this list when sign-ups change
+//  â˜… OPEN REGISTRATIONS â€” edit this list when sign-ups change
 // =============================================================================
 //  These cards show on the homepage and on /events.
 //
@@ -100,15 +100,6 @@ export const calendarEmbedSrc =
 
 // --- Featured events (edit as things change) ------------------------------
 export const events = [
-  {
-    title: "GriefShare: Loss of a Spouse",
-    when: "August 16, 2026 \u00B7 1:00pm ET",
-    blurb:
-      "A one-day seminar for anyone grieving the death of a husband or wife. Contact Rita Cohen for more information.",
-    href: "https://find.griefshare.org/events/295440",
-    cta: "Register or learn more",
-    tag: "Care",
-  },
   {
     title: "Biblical Mediterranean Cruise",
     when: "Summer 2027",
