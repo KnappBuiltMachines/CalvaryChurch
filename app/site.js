@@ -58,7 +58,7 @@ export const everyOrgGiving =
 // =============================================================================
 //  ★ OPEN REGISTRATIONS — edit this list when sign-ups change
 // =============================================================================
-//  These cards show on the homepage and on /events.
+//  These cards show on /events.
 //
 //  TO ADD an event:     copy a block below, change the fields, commit.
 //  TO REMOVE an event:  delete its block (or set  open: false  to gray it out).

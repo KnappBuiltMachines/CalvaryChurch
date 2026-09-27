@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { site, churchCenter } from "../site";
 import { PageHeader, SectionHead } from "../../components/ui";
-import { IcClock, IcPin, IcPhone, IcMail, IcCoffee, IcKids, IcMap } from "../../components/icons";
+import { IcClock, IcPin, IcCoffee, IcKids, IcMap } from "../../components/icons";
 
 export const metadata = {
   title: "Plan a visit",
@@ -38,20 +39,6 @@ export default function Visit() {
                   <span>
                     <span className="k">Address</span>
                     <span className="v">{site.address.line1}, {site.address.line2}</span>
-                  </span>
-                </li>
-                <li>
-                  <span className="ic"><IcPhone width={22} height={22} /></span>
-                  <span>
-                    <span className="k">Church office</span>
-                    <span className="v"><a href={site.phoneHref} style={{ color: "var(--pine)", fontWeight: 500 }}>{site.phone}</a> &middot; {site.officeHours}</span>
-                  </span>
-                </li>
-                <li>
-                  <span className="ic"><IcMail width={22} height={22} /></span>
-                  <span>
-                    <span className="k">Email</span>
-                    <span className="v"><a href={`mailto:${site.email}`} style={{ color: "var(--pine)", fontWeight: 500 }}>{site.email}</a></span>
                   </span>
                 </li>
               </ul>
@@ -97,26 +84,12 @@ export default function Visit() {
         </div>
       </section>
 
-      {/* Worship service rhythm */}
       <section className="section">
-        <div className="wrap prose">
-          <SectionHead center eyebrow="The hour itself" title="What a service looks like." />
-          <p>
-            We gather to worship the Lord through music, to open God&rsquo;s Word together, and to pray
-            for one another. Communion and water baptism are practiced regularly, in accordance with
-            Scripture.
-          </p>
-          <blockquote>
-            <p>They continued steadfastly in the apostles&rsquo; doctrine and fellowship, in the breaking of bread, and in prayers.</p>
-            <span className="ref">Acts 2:42</span>
-          </blockquote>
-          <p>
-            If you have a question we haven&rsquo;t answered here, call the office at{" "}
-            <a href={site.phoneHref} style={{ color: "var(--pine)", fontWeight: 500 }}>{site.phone}</a>{" "}
-            or email{" "}
-            <a href={`mailto:${site.email}`} style={{ color: "var(--pine)", fontWeight: 500 }}>{site.email}</a>.
-            We&rsquo;d rather answer it now than have you wonder on Sunday morning.
-          </p>
+        <div className="wrap">
+          <div className="note">
+            <strong>Have a question before Sunday?</strong> The church office is happy to help &mdash;{" "}
+            <Link href="/connect#contact" style={{ color: "#6A5320", fontWeight: 600 }}>contact us here</Link>.
+          </div>
         </div>
       </section>
     </>

@@ -38,13 +38,14 @@ export default function Footer() {
           <div>
             <h4>Explore</h4>
             <ul>
-              <li><Link href="/visit">Plan a visit</Link></li>
-              <li><Link href="/watch">Watch messages</Link></li>
+              <li><Link href="/about">Who we are</Link></li>
               <li><Link href="/staff">Our staff</Link></li>
-              <li><Link href="/ministries">Ministries</Link></li>
-              <li><Link href="/events">Events calendar</Link></li>
               <li><Link href="/beliefs">Statement of faith</Link></li>
+              <li><Link href="/watch">Watch messages</Link></li>
+              <li><Link href="/ministries">Ministries</Link></li>
+              <li><Link href="/events">Events</Link></li>
               <li><Link href="/give">Give</Link></li>
+              <li><Link href="/visit">Plan a visit</Link></li>
             </ul>
           </div>
 
@@ -55,7 +56,7 @@ export default function Footer() {
               <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
               <li style={{ marginTop: 14 }}><a href={churchCenter.home}>Church Center app</a></li>
               <li><a href={churchCenter.forms.prayer}>Request prayer</a></li>
-              <li><Link href="/griefshare">GriefShare</Link></li>
+              <li><Link href="/connect">All ways to connect</Link></li>
             </ul>
           </div>
         </div>

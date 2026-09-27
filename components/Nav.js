@@ -10,7 +10,6 @@ const LINKS = [
     { href: "/about", label: "Who we are" },
     { href: "/staff", label: "Our staff" },
     { href: "/beliefs", label: "Statement of faith" },
-    { href: "/visit", label: "Where & when" },
   ]},
   { href: "/watch", label: "Watch" },
   { href: "/ministries", label: "Ministries" },

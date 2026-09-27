@@ -1,4 +1,4 @@
-import { social, latestMessage, site } from "../site";
+import { social, latestMessage } from "../site";
 import { PageHeader, SectionHead } from "../../components/ui";
 import { IcPlay, IcYouTube } from "../../components/icons";
 
@@ -45,9 +45,7 @@ export default function Watch() {
             </a>
           </div>
           <div className="note" style={{ marginTop: 40 }}>
-            <strong>Can&rsquo;t make it in person?</strong> Services are {site.services[0].day.toLowerCase()} at{" "}
-            {site.services[0].time} and {site.services[1].day.toLowerCase()} at {site.services[1].time}.
-            Watch live or catch up later &mdash; either way, you&rsquo;re part of this.
+            <strong>Can&rsquo;t make it in person?</strong> Watch live or catch up later &mdash; either way, you&rsquo;re part of this.
           </div>
         </div>
       </section>

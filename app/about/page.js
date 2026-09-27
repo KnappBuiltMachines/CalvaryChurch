@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { site } from "../site";
 import { PageHeader, SectionHead } from "../../components/ui";
-import { IcCross } from "../../components/icons";
 
 export const metadata = {
   title: "Who we are",
@@ -52,26 +50,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* Pastor */}
+      {/* Next steps within About */}
       <section className="section section-alt">
-        <div className="wrap">
-          <div className="split">
-            <div className="split-panel" aria-hidden="true"><IcCross /></div>
-            <div>
-              <SectionHead eyebrow="Our pastor" title="A personal welcome." />
-              <p style={{ color: "var(--muted)", fontSize: 18 }}>
-                &ldquo;Let me personally welcome you to our church, and tell you how excited I am about
-                your interest. On behalf of my wife and myself, I would like to invite you to worship
-                the Lord with us and enjoy the fellowship of like-minded believers. It is our prayer
-                for you that you grow in grace and have a deeper understanding of God&rsquo;s love for
-                you.&rdquo;
-              </p>
-              <p className="signature">&mdash; {site.pastors}</p>
-              <div className="hero-actions" style={{ justifyContent: "flex-start", marginTop: 28 }}>
-                <Link href="/beliefs" className="btn btn-primary">What we believe</Link>
-                <Link href="/visit" className="btn btn-ghost">Plan a visit</Link>
-              </div>
-            </div>
+        <div className="wrap" style={{ textAlign: "center" }}>
+          <SectionHead center eyebrow="Get to know us" title="Meet the people and the beliefs behind it." />
+          <div className="hero-actions">
+            <Link href="/staff" className="btn btn-primary">Meet our staff</Link>
+            <Link href="/beliefs" className="btn btn-ghost">What we believe</Link>
           </div>
         </div>
       </section>

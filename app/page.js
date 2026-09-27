@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { site } from "./site";
-import SocialRow from "../components/SocialRow";
 import { SectionHead } from "../components/ui";
-import { IcCoffee, IcKids, IcMap, IcPlay } from "../components/icons";
+import { IcArrow, IcCalendar, IcConnect, IcGift, IcKids, IcPlay } from "../components/icons";
+
+// Quick links to the main sections. Details live on each page, not here.
+const PATHS = [
+  { href: "/ministries", icon: <IcKids width={28} height={28} />, title: "Ministries", body: "Children's Ministry, GriefShare, and discipleship.", cta: "Find your place" },
+  { href: "/events", icon: <IcCalendar width={28} height={28} />, title: "Events", body: "Open registrations and the full church calendar.", cta: "See what's coming" },
+  { href: "/connect", icon: <IcConnect width={28} height={28} />, title: "Connect", body: "Prayer, groups, the Church Center app, and the office.", cta: "Get in touch" },
+  { href: "/give", icon: <IcGift width={28} height={28} />, title: "Give", body: "Give online, through Every.org, or in person.", cta: "Ways to give" },
+];
 
 export default function Home() {
   return (
@@ -61,42 +68,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEW HERE — white */}
+      {/* FIND YOUR WAY — white */}
       <section className="section section-alt">
         <div className="wrap">
-          <SectionHead center eyebrow="New here?" title="Everything you're wondering, answered."
-            lead="Walking into a church for the first time takes courage. Here's what to expect before you even arrive." />
-          <div className="cards">
-            <article className="card">
-              <div className="card-arch"><IcCoffee /></div>
-              <div className="card-body">
-                <h3>What a Sunday feels like</h3>
-                <p>Come as you are. Grab a coffee, find a seat, and settle in for worship and a practical message from God&rsquo;s Word. No spotlight, no pressure.</p>
-              </div>
-            </article>
-            <article className="card">
-              <div className="card-arch"><IcKids /></div>
-              <div className="card-body">
-                <h3>Your kids are cared for</h3>
-                <p>Our Children&rsquo;s Ministry offers a safe, warm, and fun place for your kids &mdash; so you can worship knowing they&rsquo;re loved and looked after.</p>
-              </div>
-            </article>
-            <article className="card">
-              <div className="card-arch"><IcMap /></div>
-              <div className="card-body">
-                <h3>Getting here is easy</h3>
-                <p>Free parking in the lot adjacent to the church, and a friendly face at the door to point you where you need to go.</p>
-              </div>
-            </article>
+          <SectionHead center eyebrow="Find your way" title="Where would you like to go?" />
+          <div className="steps">
+            {PATHS.map((p) => (
+              <Link className="step" href={p.href} key={p.href}>
+                <span className="ic">{p.icon}</span>
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+                <span className="go">{p.cta} <IcArrow width={15} height={15} /></span>
+              </Link>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* STAY CONNECTED — cream */}
-      <section className="section">
-        <div className="wrap">
-          <SectionHead center eyebrow="Stay connected" title="Follow along during the week." />
-          <SocialRow />
         </div>
       </section>
     </>
