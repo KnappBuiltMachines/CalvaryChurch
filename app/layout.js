@@ -2,6 +2,7 @@ import "./globals.css";
 import { site, social } from "./site";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL("https://www.cchammonton.org"),
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
         <Nav />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
