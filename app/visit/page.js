@@ -90,7 +90,7 @@ export default function Visit() {
               <div className="card-arch"><IcMap /></div>
               <div className="card-body">
                 <h3>Parking is free</h3>
-                <p>Pull right into the lot on Egg Harbor Rd. Someone will be near the entrance to greet you and answer any question you have.</p>
+                <p>Free parking in the lot adjacent to the church. Someone will be near the entrance to greet you and answer any question you have.</p>
               </div>
             </article>
           </div>

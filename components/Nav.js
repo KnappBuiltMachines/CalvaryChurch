@@ -8,6 +8,7 @@ import { site } from "../app/site";
 const LINKS = [
   { href: "/about", label: "About", children: [
     { href: "/about", label: "Who we are" },
+    { href: "/staff", label: "Our staff" },
     { href: "/beliefs", label: "Statement of faith" },
     { href: "/visit", label: "Where & when" },
   ]},

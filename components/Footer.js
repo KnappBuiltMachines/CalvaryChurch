@@ -40,6 +40,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/visit">Plan a visit</Link></li>
               <li><Link href="/watch">Watch messages</Link></li>
+              <li><Link href="/staff">Our staff</Link></li>
               <li><Link href="/ministries">Ministries</Link></li>
               <li><Link href="/events">Events calendar</Link></li>
               <li><Link href="/beliefs">Statement of faith</Link></li>

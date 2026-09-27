@@ -12,7 +12,7 @@ const MINISTRIES = [
   {
     icon: <IcKids width={30} height={30} />,
     title: "Children's Ministry",
-    body: "A safe, warm, and joyful place where kids learn who Jesus is at their own level, while you worship.",
+    body: "A safe, warm, and joyful place where kids are taught biblically and learn who Jesus is at their own level, while you worship.",
     href: churchCenter.forms.children,
     cta: "Register your child",
   },

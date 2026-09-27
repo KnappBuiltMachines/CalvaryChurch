@@ -1,5 +1,5 @@
 // =============================================================================
-//  Calvary Chapel of Hammonton â€” site configuration
+//  Calvary Chapel of Hammonton — site configuration
 //  ONE place to edit church facts, links, events, and sermons.
 //  Values below were pulled from the live cchammonton.org pages.
 //  Anything marked  // CONFIRM  needs a human to verify.
@@ -56,7 +56,7 @@ export const everyOrgGiving =
   "https://www.every.org/calvary-chapel-of-hammonton?utm_campaign=donate-link#/donate/bank";
 
 // =============================================================================
-//  â˜… OPEN REGISTRATIONS â€” edit this list when sign-ups change
+//  ★ OPEN REGISTRATIONS — edit this list when sign-ups change
 // =============================================================================
 //  These cards show on the homepage and on /events.
 //
@@ -83,6 +83,72 @@ export const registrations = [
     href: `${CC}/registrations/events/3716027`,
     featured: true,
     open: true,
+  },
+];
+
+// =============================================================================
+//  ★ STAFF — edit this list to update the /staff page
+// =============================================================================
+//  One block per person. Top of the list shows first.
+//
+//  photo  Upload a headshot into  public/staff/  and reference it here as
+//         "/staff/firstname-lastname.jpg". Square photos work best.
+//         Leave it as  ""  and the card shows the person's initials instead.
+//
+//  bio    Each item in the list is its own paragraph. Add or remove lines freely.
+//
+//  email  Optional. Leave as  ""  to hide it.
+//
+//  TO ADD a person:     copy a block below, change the fields, commit.
+//  TO REMOVE a person:  delete their block.
+// =============================================================================
+
+export const staff = [
+  {
+    name: "Staff Member Name",
+    role: "Title / Role",
+    photo: "",
+    email: "",
+    bio: [
+      "A few sentences about this person: how long they've been at Calvary Chapel of Hammonton and what they oversee.",
+      "A second paragraph for family, testimony, or a favorite verse.",
+    ],
+  },
+  {
+    name: "Staff Member Name",
+    role: "Title / Role",
+    photo: "",
+    email: "",
+    bio: [
+      "A few sentences about this person: how long they've been at Calvary Chapel of Hammonton and what they oversee.",
+    ],
+  },
+  {
+    name: "Staff Member Name",
+    role: "Title / Role",
+    photo: "",
+    email: "",
+    bio: [
+      "A few sentences about this person: how long they've been at Calvary Chapel of Hammonton and what they oversee.",
+    ],
+  },
+  {
+    name: "Staff Member Name",
+    role: "Title / Role",
+    photo: "",
+    email: "",
+    bio: [
+      "A few sentences about this person: how long they've been at Calvary Chapel of Hammonton and what they oversee.",
+    ],
+  },
+  {
+    name: "Staff Member Name",
+    role: "Title / Role",
+    photo: "",
+    email: "",
+    bio: [
+      "A few sentences about this person: how long they've been at Calvary Chapel of Hammonton and what they oversee.",
+    ],
   },
 ];
 

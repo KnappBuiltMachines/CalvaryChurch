@@ -13,7 +13,7 @@ export default function Home() {
           <div className="welcome-split">
             <div className="welcome-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/about/pastors.png" alt="Pastor Vince and Dianne Lombardo" />
+              <img src="/about/pastors.jpg" alt="Pastor Vince and Dianne Lombardo" />
             </div>
             <div className="welcome-body">
               <span className="eyebrow">A word from our pastor</span>
@@ -85,7 +85,7 @@ export default function Home() {
               <div className="card-arch"><IcMap /></div>
               <div className="card-body">
                 <h3>Getting here is easy</h3>
-                <p>Free parking right out front on Egg Harbor Rd., and a friendly face at the door to point you where you need to go.</p>
+                <p>Free parking in the lot adjacent to the church, and a friendly face at the door to point you where you need to go.</p>
               </div>
             </article>
           </div>
