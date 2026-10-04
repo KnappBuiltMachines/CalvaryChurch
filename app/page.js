@@ -1,86 +1,261 @@
 import Link from "next/link";
-import { site } from "./site";
+import { site, churchCenter, registrations, events, latestMessage } from "./site";
 import { SectionHead } from "../components/ui";
-import { IcArrow, IcCalendar, IcConnect, IcGift, IcKids, IcPlay } from "../components/icons";
+import { IcArrow, IcCalendar, IcHeart, IcPlay } from "../components/icons";
 
-// Quick links to the main sections. Details live on each page, not here.
-const PATHS = [
-  { href: "/ministries", icon: <IcKids width={28} height={28} />, title: "Ministries", body: "Children's Ministry, GriefShare, and discipleship.", cta: "Find your place" },
-  { href: "/events", icon: <IcCalendar width={28} height={28} />, title: "Events", body: "Open registrations and the full church calendar.", cta: "See what's coming" },
-  { href: "/connect", icon: <IcConnect width={28} height={28} />, title: "Connect", body: "Prayer, groups, the Church Center app, and the office.", cta: "Get in touch" },
-  { href: "/give", icon: <IcGift width={28} height={28} />, title: "Give", body: "Give online, through Every.org, or in person.", cta: "Ways to give" },
+// =============================================================================
+//  HOME PAGE
+//  Photos live in  public/home/  â€” replace a file with the same name to swap it.
+//  Announcements pull automatically from `registrations` and `events` in site.js.
+// =============================================================================
+
+// "Get plugged in" cards. Leave `image` out to show an icon tile instead.
+const PLUGGED_IN = [
+  {
+    title: "Children's Ministry",
+    body: "A safe, warm, joyful place where kids learn who Jesus is while you worship.",
+    href: "/ministries",
+    cta: "Learn more",
+    image: "/home/kids.jpg",
+    alt: "Kids watching a children's ministry program",
+  },
+  {
+    title: "Discipleship & baptism",
+    body: "New to following Jesus, or ready to go deeper? We'll walk with you.",
+    href: churchCenter.forms.discipled,
+    cta: "Get discipled",
+    image: "/home/baptism.jpg",
+    alt: "A water baptism at Calvary Chapel of Hammonton",
+    position: "center 40%",
+  },
+  {
+    title: "Prayer & groups",
+    body: "Share a prayer request or get connected with others.",
+    href: churchCenter.forms.connected,
+    cta: "Get connected",
+    image: "/home/prayer.jpg",
+    alt: "Praying together at the front of the sanctuary",
+  },
+  {
+    title: "GriefShare",
+    body: "Support for anyone walking through the loss of someone close.",
+    href: "/griefshare",
+    cta: "Learn more",
+    icon: <IcHeart width={46} height={46} />,
+  },
 ];
 
+// Internal links ("/â€¦") use Next's Link; anything else is a plain <a>.
+function SmartLink({ href, ...props }) {
+  return href.startsWith("/") ? <Link href={href} {...props} /> : <a href={href} {...props} />;
+}
+
 export default function Home() {
+  // Open registrations first, then featured events. Two cards max + the calendar card.
+  const announcements = [
+    ...registrations
+      .filter((r) => r.open)
+      .map((r) => ({
+        title: r.title, when: r.when, blurb: r.blurb, href: r.href, image: r.image,
+        featured: r.featured, tag: "Registration open", cta: "Register",
+      })),
+    ...events.map((e) => ({
+      title: e.title, when: e.when, blurb: e.blurb, href: e.href, image: e.image,
+      tag: e.tag || "Event", cta: e.cta || "Details",
+    })),
+  ].slice(0, 2);
+
   return (
     <>
-      {/* PASTOR'S WELCOME — white */}
-      <section className="section section-alt">
-        <div className="wrap">
-          <div className="welcome-split">
-            <div className="welcome-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/about/pastors.jpg" alt="Pastor Vince and Dianne Lombardo" />
-            </div>
-            <div className="welcome-body">
-              <span className="eyebrow">A word from our pastor</span>
-              <h2 style={{ fontSize: "clamp(28px,4vw,38px)", margin: "12px 0 22px" }}>Welcome home.</h2>
-              <p>
-                As Pastor of Calvary Chapel of Hammonton, let me personally welcome you to our website,
-                and tell you how excited I am about your interest in our church! I hope that our site
-                will provide you with the information you&rsquo;re looking for, but if not, please feel
-                free to contact us at <a href={`mailto:${site.email}`}>{site.email}</a>.
-              </p>
-              <p>
-                On behalf of my wife and myself, I would like to personally invite you to worship the
-                Lord with us, and enjoy the fellowship of like-minded believers. It is our prayer for
-                you that you grow in grace and have a deeper understanding of God&rsquo;s love for you!
-              </p>
-              <p className="signature serif-italic">Pastor Vince and Dianne Lombardo</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HERO — cream */}
-      <section className="hero">
-        <div className="hero-arch" aria-hidden="true" />
-        <div className="wrap hero-inner">
-          <span className="eyebrow">Calvary Chapel &middot; {site.town}</span>
-          <h1>There&rsquo;s a seat saved for you.</h1>
-          <p className="hero-tag serif-italic">{site.tagline}.</p>
-          <p className="hero-sub">
-            Whoever you are and wherever you&rsquo;ve been, you&rsquo;re welcome here. Join us this
-            Sunday, or watch online first &mdash; no pressure either way.
+      {/* 1. HERO â€” the church building */}
+      <section className="home-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="home-hero-img"
+          src="/home/church-front.jpg"
+          alt={`${site.name} building on S. Egg Harbor Rd.`}
+          fetchPriority="high"
+        />
+        <div className="home-hero-shade" aria-hidden="true" />
+        <div className="wrap home-hero-inner">
+          <span className="eyebrow">Welcome to</span>
+          <h1>{site.name}</h1>
+          <p className="home-hero-tag serif-italic">{site.tagline}.</p>
+          <p className="home-hero-sub">
+            Whoever you are and wherever you&rsquo;ve been, you&rsquo;re welcome here. There&rsquo;s
+            a seat saved for you.
           </p>
           <div className="hero-actions">
-            <Link href="/visit" className="btn btn-primary">Plan your first visit</Link>
-            <Link href="/watch" className="btn btn-ghost"><IcPlay width={20} height={20} /> Watch a message</Link>
+            <Link href="/visit" className="btn btn-light">Plan your first visit</Link>
+            <Link href="/about" className="btn btn-outline-light">Learn more about us</Link>
           </div>
-          <div className="hero-times">
-            {site.services.map((s, i) => (
-              <span key={s.day}>
-                {i > 0 && <span className="sep" style={{ marginRight: 22 }}>&middot;</span>}
-                <span className="lbl">{s.day} </span><strong>{s.time}</strong>
-              </span>
+        </div>
+      </section>
+
+      {/* 2. SERVICE TIMES BAND */}
+      <section className="home-band">
+        <div className="wrap home-band-inner">
+          <h2>Join us this Sunday!</h2>
+          <div className="home-band-times">
+            {site.services.map((s) => (
+              <span key={s.day}><span className="lbl">{s.day}</span> <strong>{s.time}</strong></span>
+            ))}
+            <span>{site.address.line1}, Hammonton</span>
+          </div>
+          <Link href="/visit" className="home-band-link">Plan your visit &rarr;</Link>
+        </div>
+      </section>
+
+      {/* 3. ANNOUNCEMENTS & UPDATES */}
+      <section className="section">
+        <div className="wrap">
+          <SectionHead eyebrow="From your church family" title="Announcements & updates" />
+          <div className="home-announce">
+            {announcements.map((a) => (
+              <SmartLink className="reg-card" href={a.href} key={a.title}>
+                {a.image ? (
+                  <div className="reg-media">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={a.image} alt={`${a.title} artwork`} loading="lazy" />
+                    {a.featured && <span className="reg-featured">Featured</span>}
+                  </div>
+                ) : (
+                  <div className="reg-media home-media-icon" aria-hidden="true">
+                    <IcCalendar width={44} height={44} />
+                  </div>
+                )}
+                <div className="reg-body">
+                  <span className="tag">{a.tag}</span>
+                  <h3>{a.title}</h3>
+                  {a.when && <span className="when">{a.when}</span>}
+                  {a.blurb && <p>{a.blurb}</p>}
+                  <span className="go">{a.cta} <IcArrow width={15} height={15} /></span>
+                </div>
+              </SmartLink>
+            ))}
+            <Link href="/events" className="home-all-events">
+              <IcCalendar width={34} height={34} />
+              <div>
+                <h3>See everything that&rsquo;s coming up</h3>
+                <p>Open registrations and the full church calendar.</p>
+                <span className="go">All events <IcArrow width={15} height={15} /></span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. WHO WE ARE */}
+      <section className="section section-alt">
+        <div className="wrap home-who">
+          <div className="home-who-copy">
+            <span className="eyebrow">Who we are</span>
+            <h2>A family of believers, right here in Hammonton.</h2>
+            <p>
+              Our supreme desire is to know Christ and to be conformed to His image by the power of
+              the Holy Spirit. We gather to worship through music, break bread, pray together, and
+              encourage one another.
+            </p>
+            <p>Sharing God&rsquo;s love with those near and far is a priority &mdash; starting with our own neighbors.</p>
+            <div className="home-actions">
+              <Link href="/about" className="btn btn-primary">More about us</Link>
+              <Link href="/beliefs" className="btn btn-ghost">What we believe</Link>
+            </div>
+          </div>
+          <div className="home-collage">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="tall" src="/home/worship.jpg" alt="Worship on a Sunday morning" loading="lazy" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/home/womens-gathering.jpg" alt="Women of the church gathered together" loading="lazy" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/home/fellowship-men.jpg" alt="Church family fellowship" loading="lazy" style={{ objectPosition: "center 25%" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* 5. GET PLUGGED IN */}
+      <section className="section">
+        <div className="wrap">
+          <SectionHead
+            center
+            eyebrow="Get plugged in"
+            title="Find your place."
+            lead="Our heart is to help one another build deeper relationships with God, and with each other."
+          />
+          <div className="home-plug">
+            {PLUGGED_IN.map((m) => (
+              <SmartLink className="home-plug-card" href={m.href} key={m.title}>
+                <div className={m.image ? "home-plug-media" : "home-plug-media home-plug-icon"}>
+                  {m.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={m.image} alt={m.alt} loading="lazy" style={m.position ? { objectPosition: m.position } : undefined} />
+                  ) : (
+                    m.icon
+                  )}
+                </div>
+                <div className="home-plug-body">
+                  <h3>{m.title}</h3>
+                  <p>{m.body}</p>
+                  <span className="go">{m.cta} <IcArrow width={15} height={15} /></span>
+                </div>
+              </SmartLink>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FIND YOUR WAY — white */}
-      <section className="section section-alt">
+      {/* 6. OUR PASTOR â€” smaller, lower on the page */}
+      <section className="section section-alt home-pastor-section">
+        <div className="wrap home-pastor">
+          <div className="home-pastor-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/about/pastors.jpg" alt={site.pastors} loading="lazy" />
+          </div>
+          <div className="home-pastor-body">
+            <span className="eyebrow">Our pastor</span>
+            <h2>Pastor Vince &amp; Dianne Lombardo</h2>
+            <p>
+              &ldquo;On behalf of my wife and myself, I would like to personally invite you to worship
+              the Lord with us, and enjoy the fellowship of like-minded believers.&rdquo;
+            </p>
+            <Link href="/staff" className="go">Meet our staff <IcArrow width={15} height={15} /></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. LATEST MESSAGE */}
+      <section className="section">
         <div className="wrap">
-          <SectionHead center eyebrow="Find your way" title="Where would you like to go?" />
-          <div className="steps">
-            {PATHS.map((p) => (
-              <Link className="step" href={p.href} key={p.href}>
-                <span className="ic">{p.icon}</span>
-                <h3>{p.title}</h3>
-                <p>{p.body}</p>
-                <span className="go">{p.cta} <IcArrow width={15} height={15} /></span>
-              </Link>
-            ))}
+          <a className="watch-card home-watch" href={latestMessage.watchUrl}>
+            <div className="home-watch-thumb">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/home/message.jpg" alt="Teaching from the Word" loading="lazy" />
+              <span className="home-play" aria-hidden="true"><IcPlay width={28} height={28} /></span>
+            </div>
+            <div className="watch-meta">
+              <span className="eyebrow">Latest message</span>
+              <h3>{latestMessage.title}</h3>
+              <p className="by">{latestMessage.speaker} &middot; {latestMessage.series}</p>
+              <p className="by" style={{ marginTop: 8 }}>
+                Can&rsquo;t make it in person? Watch online first &mdash; no pressure either way.
+              </p>
+              <span className="btn btn-primary">Watch messages</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* 8. STAY CONNECTED */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="give">
+            <span className="eyebrow">Stay connected</span>
+            <h2>Never miss what&rsquo;s happening.</h2>
+            <p>Get updates, sign up for events, and send prayer requests through the Church Center app.</p>
+            <div className="home-actions home-give-actions">
+              <a href={churchCenter.home} className="btn">Open Church Center</a>
+              <a href={churchCenter.forms.prayer} className="btn btn-outline-light">Request prayer</a>
+            </div>
           </div>
         </div>
       </section>
