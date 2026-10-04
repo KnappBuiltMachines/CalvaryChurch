@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
 
 /* ============================================================
-   Calvary Chapel of Hammonton â€” design tokens
+   Calvary Chapel of Hammonton — design tokens
    Palette: deep pine + harvest gold on soft paper.
    To rebrand, change these variables only.
    ============================================================ */
@@ -704,4 +704,26 @@ img { max-width: 100%; display: block; }
 }
 @media (prefers-reduced-motion: reduce) {
   .home-plug-card:hover .home-plug-media img { transform: none; }
+}
+
+/* ============================================================
+   Meet our pastor page
+   ============================================================ */
+.pastor-page { max-width: 860px; }
+.pastor-photo {
+  margin: 0; border-radius: 24px; overflow: hidden;
+  background: var(--pine-soft); box-shadow: var(--shadow);
+}
+.pastor-photo img { width: 100%; height: auto; display: block; }
+.pastor-letter { max-width: 680px; margin: 48px auto 0; }
+.pastor-letter p { color: var(--muted); font-size: 19px; line-height: 1.75; margin-bottom: 20px; }
+.pastor-letter a { color: var(--pine); font-weight: 500; }
+.pastor-letter .pastor-signature { color: var(--pine); font-size: 24px; margin: 30px 0 0; }
+.pastor-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 34px; }
+.pastor-actions .go { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; color: var(--pine); }
+
+@media (max-width: 640px) {
+  .pastor-photo { border-radius: 16px; }
+  .pastor-letter { margin-top: 32px; }
+  .pastor-letter p { font-size: 17px; }
 }

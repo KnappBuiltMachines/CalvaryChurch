@@ -5,7 +5,7 @@ import { IcArrow, IcCalendar, IcHeart, IcPlay } from "../components/icons";
 
 // =============================================================================
 //  HOME PAGE
-//  Photos live in  public/home/  â€” replace a file with the same name to swap it.
+//  Photos live in  public/home/  — replace a file with the same name to swap it.
 //  Announcements pull automatically from `registrations` and `events` in site.js.
 // =============================================================================
 
@@ -45,7 +45,7 @@ const PLUGGED_IN = [
   },
 ];
 
-// Internal links ("/â€¦") use Next's Link; anything else is a plain <a>.
+// Internal links ("/…") use Next's Link; anything else is a plain <a>.
 function SmartLink({ href, ...props }) {
   return href.startsWith("/") ? <Link href={href} {...props} /> : <a href={href} {...props} />;
 }
@@ -67,7 +67,7 @@ export default function Home() {
 
   return (
     <>
-      {/* 1. HERO â€” the church building */}
+      {/* 1. HERO — the church building */}
       <section className="home-hero">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -204,12 +204,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. OUR PASTOR â€” smaller, lower on the page */}
+      {/* 6. OUR PASTOR — smaller, lower on the page */}
       <section className="section section-alt home-pastor-section">
         <div className="wrap home-pastor">
           <div className="home-pastor-photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/about/pastors.jpg" alt={site.pastors} loading="lazy" />
+            <img src="/about/pastor-vince-dianne.jpg" alt={site.pastors} loading="lazy" />
           </div>
           <div className="home-pastor-body">
             <span className="eyebrow">Our pastor</span>
@@ -218,7 +218,7 @@ export default function Home() {
               &ldquo;On behalf of my wife and myself, I would like to personally invite you to worship
               the Lord with us, and enjoy the fellowship of like-minded believers.&rdquo;
             </p>
-            <Link href="/staff" className="go">Meet our staff <IcArrow width={15} height={15} /></Link>
+            <Link href="/pastor" className="go">Read their welcome <IcArrow width={15} height={15} /></Link>
           </div>
         </div>
       </section>
