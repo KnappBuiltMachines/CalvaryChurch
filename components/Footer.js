@@ -39,6 +39,7 @@ export default function Footer() {
             <h4>Explore</h4>
             <ul>
               <li><Link href="/about">Who we are</Link></li>
+              <li><Link href="/pastor">Meet our pastor</Link></li>
               <li><Link href="/staff">Our staff</Link></li>
               <li><Link href="/beliefs">Statement of faith</Link></li>
               <li><Link href="/watch">Watch messages</Link></li>
