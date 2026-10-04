@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
 
 /* ============================================================
-   Calvary Chapel of Hammonton — design tokens
+   Calvary Chapel of Hammonton â€” design tokens
    Palette: deep pine + harvest gold on soft paper.
    To rebrand, change these variables only.
    ============================================================ */
@@ -562,4 +562,146 @@ img { max-width: 100%; display: block; }
 @media (max-width: 820px) {
   .staff-member { grid-template-columns: 1fr; gap: 24px; text-align: center; }
   .staff-photo { width: 200px; margin: 0 auto; }
+}
+
+/* ============================================================
+   Home page (church-first layout)
+   ============================================================ */
+
+/* Light buttons for dark backgrounds */
+.btn-light { background: var(--gold-soft); color: var(--pine-deep); }
+.btn-light:hover { background: #FFFFFF; }
+.btn-outline-light { background: transparent; color: #FFFFFF; border-color: rgba(255, 255, 255, 0.85); }
+.btn-outline-light:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* Hero with the church photo */
+.home-hero {
+  position: relative; overflow: hidden;
+  min-height: 600px; display: flex; align-items: center;
+  background: var(--pine-deep); color: #FFFFFF;
+}
+.home-hero-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 60%;
+}
+.home-hero-shade { position: absolute; inset: 0; background: rgba(22, 50, 31, 0.58); }
+.home-hero-inner {
+  position: relative; z-index: 1; max-width: 820px;
+  padding-top: 110px; padding-bottom: 110px; text-align: center;
+}
+.home-hero .eyebrow { color: var(--gold-soft); }
+.home-hero h1 { color: #FFFFFF; font-size: clamp(42px, 7vw, 74px); margin-top: 18px; }
+.home-hero-tag { font-size: clamp(20px, 3vw, 26px); color: var(--gold-soft); margin-top: 16px; }
+.home-hero-sub { font-size: 18px; color: #EAF0EC; max-width: 520px; margin: 16px auto 0; }
+
+/* Service times band */
+.home-band { background: var(--gold-soft); border-bottom: 1px solid #E6D7B4; }
+.home-band-inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 14px 32px; padding-top: 26px; padding-bottom: 26px;
+}
+.home-band h2 { font-size: 30px; color: var(--pine-deep); }
+.home-band-times { display: flex; flex-wrap: wrap; gap: 8px 30px; font-size: 16px; }
+.home-band-times .lbl { color: #6A5320; }
+.home-band-times strong { font-weight: 600; }
+.home-band-link { font-size: 15px; font-weight: 600; color: var(--pine); padding: 10px 0; }
+.home-band-link:hover { color: var(--pine-deep); }
+
+/* Announcements */
+.home-announce { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.home-media-icon { display: grid; place-items: center; color: var(--pine); }
+.home-all-events {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  background: var(--pine); color: #F7F5EF; border-radius: var(--radius);
+  padding: 34px 30px; min-height: 260px;
+  transition: transform .14s ease, background .14s ease;
+}
+.home-all-events:hover { transform: translateY(-3px); background: var(--pine-deep); }
+.home-all-events svg { color: var(--gold-soft); }
+.home-all-events h3 { color: #F7F5EF; font-size: 26px; line-height: 1.2; }
+.home-all-events p { color: #C4D2C9; font-size: 15px; margin-top: 10px; }
+.home-all-events .go { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--gold-soft); }
+
+/* Who we are + collage */
+.home-who { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+.home-who-copy h2 { font-size: clamp(30px, 4.5vw, 42px); margin: 12px 0 18px; }
+.home-who-copy p { color: var(--muted); font-size: 18px; margin-bottom: 16px; }
+.home-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.home-collage {
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 213px 213px; gap: 14px;
+}
+.home-collage img {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 14px; background: var(--pine-soft);
+}
+.home-collage img.tall { grid-row: span 2; border-radius: 200px 200px 14px 14px; }
+
+/* Get plugged in */
+.home-plug { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.home-plug-card {
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .14s ease, border-color .14s ease;
+}
+.home-plug-card:hover { transform: translateY(-3px); border-color: var(--pine); }
+.home-plug-media { aspect-ratio: 4 / 3; background: var(--pine-soft); overflow: hidden; }
+.home-plug-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.home-plug-card:hover .home-plug-media img { transform: scale(1.03); }
+.home-plug-icon { display: grid; place-items: center; background: var(--pine); color: var(--gold-soft); }
+.home-plug-body { padding: 20px 22px 24px; }
+.home-plug-body h3 { font-size: 21px; }
+.home-plug-body p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+.home-plug-body .go { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--pine); }
+
+.home-give-actions { justify-content: center; margin-top: 28px; }
+.give .home-give-actions .btn { margin-top: 0; }
+.give .btn-outline-light { background: transparent; color: #FFFFFF; border-color: rgba(255, 255, 255, 0.6); }
+.give .btn-outline-light:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* Pastor (compact) */
+.home-pastor-section { padding: 72px 0; }
+.home-pastor { display: flex; align-items: center; justify-content: center; gap: 44px; max-width: 900px; }
+.home-pastor-photo {
+  flex: 0 0 200px; width: 200px; height: 200px; border-radius: 50%; overflow: hidden;
+  background: var(--pine-soft); box-shadow: var(--shadow);
+}
+.home-pastor-photo img { width: 100%; height: 100%; object-fit: cover; }
+.home-pastor-body h2 { font-size: 30px; margin: 10px 0 12px; }
+.home-pastor-body p { color: var(--muted); font-size: 17px; }
+.home-pastor-body .go { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 15px; font-weight: 600; color: var(--pine); }
+
+/* Latest message with photo thumbnail */
+.home-watch { grid-template-columns: 1fr 1fr; color: inherit; }
+.home-watch-thumb { position: relative; min-height: 280px; background: var(--pine); }
+.home-watch-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.home-play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 68px; height: 68px; border-radius: 50%;
+  background: rgba(22, 50, 31, 0.82); color: var(--gold-soft);
+  display: grid; place-items: center; transition: transform .14s ease;
+}
+.home-watch:hover .home-play { transform: translate(-50%, -50%) scale(1.06); }
+
+@media (max-width: 1000px) {
+  .home-plug { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .home-hero { min-height: 520px; }
+  .home-hero-inner { padding-top: 80px; padding-bottom: 80px; }
+  .home-announce { grid-template-columns: 1fr; }
+  .home-all-events { min-height: 0; }
+  .home-who { grid-template-columns: 1fr; gap: 36px; }
+  .home-watch { grid-template-columns: 1fr; }
+  .home-watch-thumb { min-height: 220px; }
+}
+@media (max-width: 640px) {
+  .home-band-inner { flex-direction: column; align-items: flex-start; }
+  .home-collage { grid-template-rows: 160px 160px; gap: 10px; }
+  .home-plug { grid-template-columns: 1fr; }
+  .home-pastor { flex-direction: column; text-align: center; gap: 24px; }
+  .home-pastor-photo { flex-basis: auto; width: 180px; height: 180px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-plug-card:hover .home-plug-media img { transform: none; }
 }
