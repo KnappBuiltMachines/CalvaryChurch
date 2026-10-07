@@ -2,7 +2,7 @@ import { beliefs } from "../site";
 import { PageHeader } from "../../components/ui";
 
 export const metadata = {
-  title: "Statement of faith",
+  title: "Statement of Faith",
   description: "What Calvary Chapel of Hammonton believes about God, Scripture, salvation, the church, and the return of Christ.",
 };
 
@@ -11,7 +11,7 @@ export default function Beliefs() {
     <>
       <PageHeader
         eyebrow="About"
-        title="What we believe."
+        title="What We Believe"
         lead="The Word of God is the foundation on which this church operates and the basis by which it is governed."
       />
 

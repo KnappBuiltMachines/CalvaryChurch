@@ -4,7 +4,7 @@ import { PageHeader, SectionHead } from "../../components/ui";
 import { IcClock, IcPin, IcCoffee, IcKids, IcMap } from "../../components/icons";
 
 export const metadata = {
-  title: "Plan a visit",
+  title: "Plan Your Visit",
   description: "Service times, directions, parking, and what to expect on your first Sunday at Calvary Chapel of Hammonton.",
 };
 
@@ -43,8 +43,8 @@ export default function Visit() {
                 </li>
               </ul>
               <div className="hero-actions" style={{ justifyContent: "flex-start", marginTop: 28 }}>
-                <a href={directions} className="btn btn-primary">Get directions</a>
-                <a href={churchCenter.forms.contact} className="btn btn-ghost">Tell us you&rsquo;re coming</a>
+                <a href={directions} className="btn btn-primary">Get Directions</a>
+                <a href={churchCenter.forms.contact} className="btn btn-ghost">Tell Us You&rsquo;re Coming</a>
               </div>
             </div>
             <div className="map-frame">
@@ -62,21 +62,21 @@ export default function Visit() {
             <article className="card">
               <div className="card-arch"><IcCoffee /></div>
               <div className="card-body">
-                <h3>Come as you are</h3>
+                <h3>Come as You Are</h3>
                 <p>There&rsquo;s no dress code. You&rsquo;ll find people in jeans and people in their Sunday best, and nobody&rsquo;s counting. Grab coffee, find a seat, and take it all in.</p>
               </div>
             </article>
             <article className="card">
               <div className="card-arch"><IcKids /></div>
               <div className="card-body">
-                <h3>Kids are welcome</h3>
+                <h3>Kids Are Welcome</h3>
                 <p>Our Children&rsquo;s Ministry cares for your little ones during the service. Arrive a few minutes early and a volunteer will walk you through check-in.</p>
               </div>
             </article>
             <article className="card">
               <div className="card-arch"><IcMap /></div>
               <div className="card-body">
-                <h3>Parking is free</h3>
+                <h3>Parking Is Free</h3>
                 <p>Free parking in the lot adjacent to the church. Someone will be near the entrance to greet you and answer any question you have.</p>
               </div>
             </article>

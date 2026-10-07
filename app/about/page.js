@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PageHeader, SectionHead } from "../../components/ui";
 
 export const metadata = {
-  title: "Who we are",
+  title: "Who We Are",
   description: "Calvary Chapel of Hammonton is a family of believers dedicated to bringing honor and glory to God through all we do.",
 };
 
@@ -11,7 +11,7 @@ export default function About() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Who we are."
+        title="Who We Are"
         lead="A family of believers, dedicated to bringing honor and glory to God through all we do."
       />
 
@@ -55,8 +55,8 @@ export default function About() {
         <div className="wrap" style={{ textAlign: "center" }}>
           <SectionHead center eyebrow="Get to know us" title="Meet the people and the beliefs behind it." />
           <div className="hero-actions">
-            <Link href="/staff" className="btn btn-primary">Meet our staff</Link>
-            <Link href="/beliefs" className="btn btn-ghost">What we believe</Link>
+            <Link href="/staff" className="btn btn-primary">Meet Our Staff</Link>
+            <Link href="/beliefs" className="btn btn-ghost">What We Believe</Link>
           </div>
         </div>
       </section>

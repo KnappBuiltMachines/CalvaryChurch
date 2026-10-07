@@ -8,9 +8,9 @@ export const metadata = {
 };
 
 const CARDS = [
-  { icon: <IcPray width={30} height={30} />, title: "Get prayer", body: "Whatever you're carrying, our prayer team wants to bring it before the Lord with you.", href: churchCenter.forms.prayer, cta: "Request prayer" },
-  { icon: <IcConnect width={30} height={30} />, title: "Get connected", body: "Church is a family, not an event. Find people, serve alongside them, and belong here beyond Sunday morning.", href: churchCenter.forms.connected, cta: "Get connected" },
-  { icon: <IcCalendar width={30} height={30} />, title: "Groups", body: "Browse our groups and sign up for anything that's open.", href: churchCenter.groups, cta: "Browse groups" },
+  { icon: <IcPray width={30} height={30} />, title: "Get Prayer", body: "Whatever you're carrying, our prayer team wants to bring it before the Lord with you.", href: churchCenter.forms.prayer, cta: "Request Prayer" },
+  { icon: <IcConnect width={30} height={30} />, title: "Get Connected", body: "Church is a family, not an event. Find people, serve alongside them, and belong here beyond Sunday morning.", href: churchCenter.forms.connected, cta: "Get Connected" },
+  { icon: <IcCalendar width={30} height={30} />, title: "Groups", body: "Browse our groups and sign up for anything that's open.", href: churchCenter.groups, cta: "Browse Groups" },
 ];
 
 export default function Connect() {

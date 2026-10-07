@@ -39,7 +39,7 @@ export default function Give() {
               <li><strong>Church Maintenance &amp; Development</strong> &mdash; ensuring the church facilities are well-maintained and can continue to serve as a place of worship and community gathering.</li>
             </ul>
             <a href={churchCenter.giving} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              Give through Church Center &rarr;
+              Give Through Church Center &rarr;
             </a>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function Give() {
               designations or restrictions made by you.
             </p>
             <a href={everyOrgGiving} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              Give through Every.org &rarr;
+              Give Through Every.org &rarr;
             </a>
           </div>
         </div>

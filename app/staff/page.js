@@ -2,7 +2,7 @@ import { staff } from "../site";
 import { PageHeader } from "../../components/ui";
 
 export const metadata = {
-  title: "Our staff",
+  title: "Our Staff",
   description: "Meet the staff of Calvary Chapel of Hammonton.",
 };
 
@@ -21,7 +21,7 @@ export default function Staff() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Our staff."
+        title="Our Staff"
         lead="The people who serve Calvary Chapel of Hammonton week in and week out."
       />
 

@@ -4,7 +4,7 @@ import { PageHeader } from "../../components/ui";
 import { IcArrow } from "../../components/icons";
 
 export const metadata = {
-  title: "Meet our pastor",
+  title: "Meet Our Pastor",
   description: `A welcome from ${site.pastors} of ${site.name}.`,
 };
 
@@ -13,7 +13,7 @@ export default function Pastor() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Meet our pastor."
+        title="Meet Our Pastor"
         lead="A personal welcome from Pastor Vince and Dianne."
       />
 
@@ -45,8 +45,8 @@ export default function Pastor() {
             <p className="pastor-signature serif-italic">{site.pastors}</p>
 
             <div className="pastor-actions">
-              <Link href="/visit" className="btn btn-primary">Plan your visit</Link>
-              <Link href="/staff" className="go">Meet our staff <IcArrow width={15} height={15} /></Link>
+              <Link href="/visit" className="btn btn-primary">Plan Your Visit</Link>
+              <Link href="/staff" className="go">Meet Our Staff <IcArrow width={15} height={15} /></Link>
             </div>
           </div>
         </div>

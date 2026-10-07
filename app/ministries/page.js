@@ -14,14 +14,14 @@ const MINISTRIES = [
     title: "Children's Ministry",
     body: "A safe, warm, and joyful place where kids are taught biblically and learn who Jesus is at their own level, while you worship. Register ahead so Sunday check-in is quick and easy.",
     href: churchCenter.forms.children,
-    cta: "Register your child",
+    cta: "Register Your Child",
   },
   {
     icon: <IcHeart width={30} height={30} />,
     title: "GriefShare",
     body: "Support for anyone walking through the loss of someone close. You don't have to carry it alone.",
     href: "/griefshare",
-    cta: "Learn more",
+    cta: "Learn More",
     internal: true,
   },
   {
@@ -29,7 +29,7 @@ const MINISTRIES = [
     title: "Discipleship",
     body: "New to following Jesus, or ready to go deeper? We'll walk with you and help you grow in grace.",
     href: churchCenter.forms.discipled,
-    cta: "Get discipled",
+    cta: "Get Discipled",
   },
 ];
 

@@ -15,24 +15,24 @@ const PLUGGED_IN = [
     title: "Children's Ministry",
     body: "A safe, warm, joyful place where kids learn who Jesus is while you worship.",
     href: "/ministries",
-    cta: "Learn more",
+    cta: "Learn More",
     image: "/home/kids.jpg",
     alt: "Kids watching a children's ministry program",
   },
   {
-    title: "Discipleship & baptism",
+    title: "Discipleship & Baptism",
     body: "New to following Jesus, or ready to go deeper? We'll walk with you.",
     href: churchCenter.forms.discipled,
-    cta: "Get discipled",
+    cta: "Get Discipled",
     image: "/home/baptism.jpg",
     alt: "A water baptism at Calvary Chapel of Hammonton",
     position: "center 40%",
   },
   {
-    title: "Prayer & groups",
+    title: "Prayer & Groups",
     body: "Share a prayer request or get connected with others.",
     href: churchCenter.forms.connected,
-    cta: "Get connected",
+    cta: "Get Connected",
     image: "/home/prayer.jpg",
     alt: "Praying together at the front of the sanctuary",
   },
@@ -40,7 +40,7 @@ const PLUGGED_IN = [
     title: "GriefShare",
     body: "Support for anyone walking through the loss of someone close.",
     href: "/griefshare",
-    cta: "Learn more",
+    cta: "Learn More",
     icon: <IcHeart width={46} height={46} />,
   },
 ];
@@ -57,7 +57,7 @@ export default function Home() {
       .filter((r) => r.open)
       .map((r) => ({
         title: r.title, when: r.when, blurb: r.blurb, href: r.href, image: r.image,
-        featured: r.featured, tag: "Registration open", cta: "Register",
+        featured: r.featured, tag: "Registration Open", cta: "Register",
       })),
     ...events.map((e) => ({
       title: e.title, when: e.when, blurb: e.blurb, href: e.href, image: e.image,
@@ -86,8 +86,8 @@ export default function Home() {
             a seat saved for you.
           </p>
           <div className="hero-actions">
-            <Link href="/visit" className="btn btn-light">Plan your first visit</Link>
-            <Link href="/about" className="btn btn-outline-light">Learn more about us</Link>
+            <Link href="/visit" className="btn btn-light">Plan Your First Visit</Link>
+            <Link href="/about" className="btn btn-outline-light">Learn More About Us</Link>
           </div>
         </div>
       </section>
@@ -102,14 +102,14 @@ export default function Home() {
             ))}
             <span>{site.address.line1}, Hammonton</span>
           </div>
-          <Link href="/visit" className="home-band-link">Plan your visit &rarr;</Link>
+          <Link href="/visit" className="home-band-link">Plan Your Visit &rarr;</Link>
         </div>
       </section>
 
       {/* 3. ANNOUNCEMENTS & UPDATES */}
       <section className="section">
         <div className="wrap">
-          <SectionHead eyebrow="From your church family" title="Announcements & updates" />
+          <SectionHead eyebrow="From your church family" title="Announcements & Updates" />
           <div className="home-announce">
             {announcements.map((a) => (
               <SmartLink className="reg-card" href={a.href} key={a.title}>
@@ -138,7 +138,7 @@ export default function Home() {
               <div>
                 <h3>See everything that&rsquo;s coming up</h3>
                 <p>Open registrations and the full church calendar.</p>
-                <span className="go">All events <IcArrow width={15} height={15} /></span>
+                <span className="go">All Events <IcArrow width={15} height={15} /></span>
               </div>
             </Link>
           </div>
@@ -158,8 +158,8 @@ export default function Home() {
             </p>
             <p>Sharing God&rsquo;s love with those near and far is a priority &mdash; starting with our own neighbors.</p>
             <div className="home-actions">
-              <Link href="/about" className="btn btn-primary">More about us</Link>
-              <Link href="/beliefs" className="btn btn-ghost">What we believe</Link>
+              <Link href="/about" className="btn btn-primary">More About Us</Link>
+              <Link href="/beliefs" className="btn btn-ghost">What We Believe</Link>
             </div>
           </div>
           <div className="home-collage">
@@ -218,7 +218,7 @@ export default function Home() {
               &ldquo;On behalf of my wife and myself, I would like to personally invite you to worship
               the Lord with us, and enjoy the fellowship of like-minded believers.&rdquo;
             </p>
-            <Link href="/pastor" className="go">Read their welcome <IcArrow width={15} height={15} /></Link>
+            <Link href="/pastor" className="go">Read Their Welcome <IcArrow width={15} height={15} /></Link>
           </div>
         </div>
       </section>
@@ -239,7 +239,7 @@ export default function Home() {
               <p className="by" style={{ marginTop: 8 }}>
                 Can&rsquo;t make it in person? Watch online first &mdash; no pressure either way.
               </p>
-              <span className="btn btn-primary">Watch messages</span>
+              <span className="btn btn-primary">Watch Messages</span>
             </div>
           </a>
         </div>
@@ -254,7 +254,7 @@ export default function Home() {
             <p>Get updates, sign up for events, and send prayer requests through the Church Center app.</p>
             <div className="home-actions home-give-actions">
               <a href={churchCenter.home} className="btn">Open Church Center</a>
-              <a href={churchCenter.forms.prayer} className="btn btn-outline-light">Request prayer</a>
+              <a href={churchCenter.forms.prayer} className="btn btn-outline-light">Request Prayer</a>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function GriefShare() {
     <>
       <PageHeader
         eyebrow="Care"
-        title="GriefShare."
+        title="GriefShare"
         lead="Grief is lonely work. It doesn't have to be done alone."
       />
 
@@ -50,7 +50,7 @@ export default function GriefShare() {
           />
           <div style={{ textAlign: "center" }}>
             <a href={GRIEFSHARE_MINISTRY} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              More information
+              More Information
             </a>
           </div>
           <div className="note" style={{ marginTop: 36 }}>

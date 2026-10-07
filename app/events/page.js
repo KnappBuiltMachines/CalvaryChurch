@@ -23,7 +23,7 @@ export default function Events() {
           <RegistrationList items={registrations} />
           <div style={{ textAlign: "center", marginTop: 34 }}>
             <a href={churchCenter.registrationsIndex} className="btn btn-ghost">
-              See all registrations
+              See All Registrations
             </a>
           </div>
         </div>

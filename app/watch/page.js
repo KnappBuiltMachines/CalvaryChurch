@@ -27,7 +27,7 @@ export default function Watch() {
               <h3>{latestMessage.title}</h3>
               <p className="by">{latestMessage.speaker}</p>
               <a href={latestMessage.watchUrl} className="btn btn-primary" style={{ marginTop: 22 }}>
-                <IcPlay width={20} height={20} /> Watch now
+                <IcPlay width={20} height={20} /> Watch Now
               </a>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function Watch() {
             lead="Sunday teachings and Wednesday studies, going back years. Subscribe and never miss one." />
           <div style={{ textAlign: "center" }}>
             <a href={social.youtube} className="btn btn-primary">
-              <IcYouTube width={20} height={20} /> Visit our YouTube channel
+              <IcYouTube width={20} height={20} /> Visit Our YouTube Channel
             </a>
           </div>
           <div className="note" style={{ marginTop: 40 }}>
