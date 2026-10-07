@@ -7,10 +7,10 @@ import { site } from "../app/site";
 
 const LINKS = [
   { href: "/about", label: "About", children: [
-    { href: "/about", label: "Who we are" },
-    { href: "/pastor", label: "Meet our pastor" },
-    { href: "/staff", label: "Our staff" },
-    { href: "/beliefs", label: "Statement of faith" },
+    { href: "/about", label: "Who We Are" },
+    { href: "/pastor", label: "Meet Our Pastor" },
+    { href: "/staff", label: "Our Staff" },
+    { href: "/beliefs", label: "Statement of Faith" },
   ]},
   { href: "/watch", label: "Watch" },
   { href: "/ministries", label: "Ministries" },
@@ -79,7 +79,7 @@ export default function Nav() {
             )
           )}
           <Link href="/visit" className="btn btn-primary nav-cta" onClick={close}>
-            Plan your visit
+            Plan Your Visit
           </Link>
         </div>
 

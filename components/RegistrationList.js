@@ -33,7 +33,7 @@ export default function RegistrationList({ items }) {
 
           <div className="reg-body">
             <span className={e.open ? "tag" : "tag tag-muted"}>
-              {e.open ? "Registration open" : "Coming soon"}
+              {e.open ? "Registration Open" : "Coming Soon"}
             </span>
             <h3>{e.title}</h3>
             {e.when && <span className="when">{e.when}</span>}
