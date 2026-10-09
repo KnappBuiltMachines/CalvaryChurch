@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, social, churchCenter } from "../app/site";
+import { site, social, churchCenter, showStaff } from "../app/site";
 import { IcYouTube, IcInstagram, IcFacebook, IcX } from "./icons";
 
 export default function Footer() {
@@ -40,7 +40,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/about">Who We Are</Link></li>
               <li><Link href="/pastor">Meet Our Pastor</Link></li>
-              <li><Link href="/staff">Our Staff</Link></li>
+              {showStaff && <li><Link href="/staff">Our Staff</Link></li>}
               <li><Link href="/beliefs">Statement of Faith</Link></li>
               <li><Link href="/watch">Watch Messages</Link></li>
               <li><Link href="/ministries">Ministries</Link></li>

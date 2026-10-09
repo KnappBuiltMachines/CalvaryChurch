@@ -3,13 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { site } from "../app/site";
+import { site, showStaff } from "../app/site";
 
 const LINKS = [
   { href: "/about", label: "About", children: [
     { href: "/about", label: "Who We Are" },
     { href: "/pastor", label: "Meet Our Pastor" },
-    { href: "/staff", label: "Our Staff" },
+    ...(showStaff ? [{ href: "/staff", label: "Our Staff" }] : []),
     { href: "/beliefs", label: "Statement of Faith" },
   ]},
   { href: "/watch", label: "Watch" },

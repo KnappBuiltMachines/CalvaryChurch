@@ -57,13 +57,14 @@ export default function Home() {
       .filter((r) => r.open)
       .map((r) => ({
         title: r.title, when: r.when, blurb: r.blurb, href: r.href, image: r.image,
-        featured: r.featured, tag: "Registration Open", cta: "Register",
+        position: r.position, featured: r.featured,
+        tag: r.tag || "Registration Open", cta: r.cta || "Register",
       })),
     ...events.map((e) => ({
       title: e.title, when: e.when, blurb: e.blurb, href: e.href, image: e.image,
-      tag: e.tag || "Event", cta: e.cta || "Details",
+      position: e.position, tag: e.tag || "Event", cta: e.cta || "Details",
     })),
-  ].slice(0, 2);
+  ].slice(0, 3);
 
   return (
     <>
@@ -102,7 +103,7 @@ export default function Home() {
             ))}
             <span>{site.address.line1}, Hammonton</span>
           </div>
-          <Link href="/visit" className="home-band-link">Plan Your Visit &rarr;</Link>
+          <Link href="/visit" className="btn btn-primary home-band-btn">Plan Your Visit <IcArrow width={16} height={16} /></Link>
         </div>
       </section>
 
@@ -116,7 +117,12 @@ export default function Home() {
                 {a.image ? (
                   <div className="reg-media">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={a.image} alt={`${a.title} artwork`} loading="lazy" />
+                    <img
+                      src={a.image}
+                      alt={`${a.title} artwork`}
+                      loading="lazy"
+                      style={a.position ? { objectPosition: a.position } : undefined}
+                    />
                     {a.featured && <span className="reg-featured">Featured</span>}
                   </div>
                 ) : (
@@ -138,8 +144,8 @@ export default function Home() {
               <div>
                 <h3>See everything that&rsquo;s coming up</h3>
                 <p>Open registrations and the full church calendar.</p>
-                <span className="go">All Events <IcArrow width={15} height={15} /></span>
               </div>
+              <span className="go">All Events <IcArrow width={15} height={15} /></span>
             </Link>
           </div>
         </div>

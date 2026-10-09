@@ -1,4 +1,5 @@
-import { staff } from "../site";
+import { notFound } from "next/navigation";
+import { staff, showStaff } from "../site";
 import { PageHeader } from "../../components/ui";
 
 export const metadata = {
@@ -17,6 +18,9 @@ const initials = (name) =>
     .toUpperCase();
 
 export default function Staff() {
+  // Hidden until photos and bios are ready. Turn on with  showStaff  in site.js.
+  if (!showStaff) notFound();
+
   return (
     <>
       <PageHeader

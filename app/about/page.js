@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PageHeader, SectionHead } from "../../components/ui";
+import { showStaff } from "../site";
 
 export const metadata = {
   title: "Who We Are",
@@ -55,7 +56,11 @@ export default function About() {
         <div className="wrap" style={{ textAlign: "center" }}>
           <SectionHead center eyebrow="Get to know us" title="Meet the people and the beliefs behind it." />
           <div className="hero-actions">
-            <Link href="/staff" className="btn btn-primary">Meet Our Staff</Link>
+            {showStaff ? (
+              <Link href="/staff" className="btn btn-primary">Meet Our Staff</Link>
+            ) : (
+              <Link href="/pastor" className="btn btn-primary">Meet Our Pastor</Link>
+            )}
             <Link href="/beliefs" className="btn btn-ghost">What We Believe</Link>
           </div>
         </div>

@@ -71,20 +71,55 @@ export const everyOrgGiving =
 //         then reference it here as  "/events/your-file.jpg"
 //         Leave it out entirely and the card shows an icon instead.
 //
+//  Optional fields:
+//    tag       Badge text. Default "Registration Open".
+//    cta       Link text.  Default "Register".
+//    position  Which part of the artwork to keep when it's cropped to 16:9,
+//              e.g. "center top". Default "center".
+//
 //  Commit to `main` and Vercel redeploys in about a minute.
 // =============================================================================
 
 export const registrations = [
+  {
+    title: "God’s Design Marriage Conference",
+    when: "Saturday, November 14, 2026 · 9:00am",
+    blurb:
+      "A one-day conference with Calvary Chapel Gloucester County on God’s design for marriage. Pastor Vince & Dianne are among the speakers. Lunch and childcare provided.",
+    image: "/events/marriage-conference-2026.jpg",
+    position: "center top",
+    href: "https://www.cc-gc.org/marriage-conference/",
+    tag: "Tickets Available",
+    cta: "Get Tickets",
+    featured: true,
+    open: true,
+  },
+  {
+    title: "Homeschool Co-Op 2026–2027",
+    when: "Thursdays · Sept 17 – Nov 19, 2026",
+    blurb:
+      "Learning and fellowship for homeschool families, 9:30am–1:00pm. Please register every adult and child attending; $20 per family each semester covers materials.",
+    image: "/events/homeschool-coop-2026-2027.jpg",
+    href: `${CC}/registrations/events/3812136`,
+    open: true,
+  },
   {
     title: "AWANA 2026\u20132027",
     when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
     image: "/events/awana-2026-2027.jpg",
     href: `${CC}/registrations/events/3716027`,
-    featured: true,
     open: true,
   },
 ];
+
+// =============================================================================
+//  ★ STAFF PAGE ON/OFF
+//  false = /staff is hidden: removed from the menu, footer, and About/Pastor
+//  pages, and the URL shows "not found". Flip to true once photos and bios
+//  below are filled in.
+// =============================================================================
+export const showStaff = false;
 
 // =============================================================================
 //  ★ STAFF — edit this list to update the /staff page

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site } from "../site";
+import { site, showStaff } from "../site";
 import { PageHeader } from "../../components/ui";
 import { IcArrow } from "../../components/icons";
 
@@ -46,7 +46,9 @@ export default function Pastor() {
 
             <div className="pastor-actions">
               <Link href="/visit" className="btn btn-primary">Plan Your Visit</Link>
-              <Link href="/staff" className="go">Meet Our Staff <IcArrow width={15} height={15} /></Link>
+              {showStaff && (
+                <Link href="/staff" className="go">Meet Our Staff <IcArrow width={15} height={15} /></Link>
+              )}
             </div>
           </div>
         </div>

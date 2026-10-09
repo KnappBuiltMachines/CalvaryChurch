@@ -727,3 +727,52 @@ img { max-width: 100%; display: block; }
   .pastor-letter { margin-top: 32px; }
   .pastor-letter p { font-size: 17px; }
 }
+
+/* ============================================================
+   Launch fixes (Oct 2026)
+   ============================================================ */
+
+/* "Plan Your Visit" in the nav: the generic nav-link color was overriding the
+   button's text color, leaving gray text on dark green. Lock it to light text. */
+.nav-links a.nav-cta,
+.nav-links a.nav-cta:hover,
+.nav-links a.nav-cta.active {
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.nav-links a.nav-cta { background: var(--pine); box-shadow: 0 2px 8px rgba(22, 50, 31, 0.22); }
+.nav-links a.nav-cta:hover { background: var(--pine-deep); }
+.nav-links a.nav-cta.active::after { display: none; }
+@media (max-width: 900px) {
+  .nav-links.open a.nav-cta { padding: 14px 18px; border-left: 0; }
+}
+
+/* Hero "Plan Your First Visit": bolder, higher-contrast pill */
+.home-hero .btn-light {
+  background: #FFFFFF; color: var(--pine-deep); font-weight: 600;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+}
+.home-hero .btn-light:hover { background: var(--gold-soft); }
+.home-hero .btn-outline-light { font-weight: 600; }
+
+/* Service-times band: "Plan Your Visit" is a real button now */
+.home-band-btn { font-weight: 600; }
+
+/* Announcements: three cards, then a full-width "see everything" strip */
+.home-all-events {
+  grid-column: 1 / -1;
+  flex-direction: row; align-items: center; justify-content: flex-start;
+  gap: 20px; min-height: 0; padding: 24px 30px;
+}
+.home-all-events h3 { font-size: 22px; }
+.home-all-events p { margin-top: 4px; }
+.home-all-events > div { flex: 1; }
+.home-all-events .go { margin-top: 0; margin-left: auto; }
+@media (max-width: 640px) {
+  .home-all-events { flex-direction: column; align-items: flex-start; }
+  .home-all-events .go { margin-left: 0; }
+}
+
+/* Featured badge sits bottom-left so it doesn't cover titles in event artwork */
+.reg-featured { top: auto; bottom: 12px; }

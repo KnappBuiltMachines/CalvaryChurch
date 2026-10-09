@@ -15,7 +15,12 @@ export default function RegistrationList({ items }) {
             <div className="reg-media">
               {/* Plain <img>: artwork is already sized, no next/image config needed. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={e.image} alt={`${e.title} artwork`} loading="lazy" />
+              <img
+                src={e.image}
+                alt={`${e.title} artwork`}
+                loading="lazy"
+                style={e.position ? { objectPosition: e.position } : undefined}
+              />
               {e.featured && (
                 <span className="reg-featured">
                   <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
@@ -33,13 +38,13 @@ export default function RegistrationList({ items }) {
 
           <div className="reg-body">
             <span className={e.open ? "tag" : "tag tag-muted"}>
-              {e.open ? "Registration Open" : "Coming Soon"}
+              {e.open ? e.tag || "Registration Open" : "Coming Soon"}
             </span>
             <h3>{e.title}</h3>
             {e.when && <span className="when">{e.when}</span>}
             {e.blurb && <p>{e.blurb}</p>}
             <span className="go">
-              {e.open ? "Register" : "Details"} <IcArrow width={15} height={15} />
+              {e.open ? e.cta || "Register" : "Details"} <IcArrow width={15} height={15} />
             </span>
           </div>
         </a>
