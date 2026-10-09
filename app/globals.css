@@ -597,7 +597,7 @@ img { max-width: 100%; display: block; }
 /* Service times band */
 .home-band { background: var(--gold-soft); border-bottom: 1px solid #E6D7B4; }
 .home-band-inner {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
   gap: 14px 32px; padding-top: 26px; padding-bottom: 26px;
 }
 .home-band h2 { font-size: 30px; color: var(--pine-deep); }

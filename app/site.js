@@ -46,7 +46,7 @@ export const churchCenter = {
     discipled: `${CC}/people/forms/407234`,     // "Get Discipled"
     connected: `${CC}/people/forms/407235`,     // "Get Connected"
     children: `${CC}/people/forms/517537`,      // Children's Ministry
-    contact: `${CC}/people/forms/554231`,       // CONFIRM what this form is
+    contact: `${CC}/people/forms/554231`,       // Baptism sign-up
   },
   registrationsIndex: `${CC}/registrations/events`,
 };
@@ -81,6 +81,14 @@ export const everyOrgGiving =
 // =============================================================================
 
 export const registrations = [
+  {
+    title: "Women\u2019s Ministry Fall Fiesta",
+    when: "Saturday, October 24, 2026 \u00b7 11:00am \u2013 2:00pm",
+    blurb: "A Calvary Chapel of Hammonton women\u2019s ministry gathering with guest speaker Martha Cornell.",
+    image: "/events/fall-fiesta-2026.jpg",
+    href: `${CC}/registrations/events/3863149`,
+    open: true,
+  },
   {
     title: "God’s Design Marriage Conference",
     when: "Saturday, November 14, 2026 · 9:00am",

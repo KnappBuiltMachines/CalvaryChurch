@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { site, churchCenter, registrations, events, latestMessage } from "./site";
 import { SectionHead } from "../components/ui";
-import { IcArrow, IcCalendar, IcHeart, IcPlay } from "../components/icons";
+import { IcArrow, IcCalendar, IcPlay } from "../components/icons";
 
 // =============================================================================
 //  HOME PAGE
@@ -22,7 +22,7 @@ const PLUGGED_IN = [
   {
     title: "Baptism",
     body: "Ready to publicly declare your faith in Jesus? Sign up to be baptized.",
-    href: churchCenter.forms.discipled,
+    href: churchCenter.forms.contact,
     cta: "Sign Up for Baptism",
     image: "/home/baptism.jpg",
     alt: "Baptism — sign in here",
@@ -30,7 +30,7 @@ const PLUGGED_IN = [
   {
     title: "Prayer & Groups",
     body: "Share a prayer request or get connected with others.",
-    href: churchCenter.forms.connected,
+    href: churchCenter.groups,
     cta: "Get Connected",
     image: "/home/prayer.jpg",
     alt: "Praying together at the front of the sanctuary",
@@ -40,7 +40,8 @@ const PLUGGED_IN = [
     body: "Support for anyone walking through the loss of someone close.",
     href: "/griefshare",
     cta: "Learn More",
-    icon: <IcHeart width={46} height={46} />,
+    image: "/home/griefshare.jpg",
+    alt: "GriefShare grief recovery support group",
   },
 ];
 
@@ -101,7 +102,6 @@ export default function Home() {
             ))}
             <span>{site.address.line1}, {site.address.line2}</span>
           </div>
-          <Link href="/visit" className="btn btn-primary home-band-btn">Plan Your Visit <IcArrow width={16} height={16} /></Link>
         </div>
       </section>
 
