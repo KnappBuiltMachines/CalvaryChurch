@@ -91,7 +91,6 @@ export const registrations = [
     href: "https://www.cc-gc.org/marriage-conference/",
     tag: "Tickets Available",
     cta: "Get Tickets",
-    featured: true,
     open: true,
   },
   {
@@ -109,6 +108,17 @@ export const registrations = [
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
     image: "/events/awana-2026-2027.jpg",
     href: `${CC}/registrations/events/3716027`,
+    open: true,
+  },
+  {
+    title: "Biblical Mediterranean Cruise",
+    when: "Summer 2027",
+    blurb:
+      "Travel with Calvary Chapel of Hammonton through the lands of the New Testament, hosted with Stephen's Gate Tours.",
+    image: "/events/biblical-mediterranean-cruise-2027.jpg",
+    href: "https://mayfairtravel.wetravel.com/trips/summer-2027-cc-hammonton-biblical-mediterranean-cruise-stephen-s-gate-tours-0325083818",
+    tag: "Travel",
+    cta: "See the Itinerary",
     open: true,
   },
 ];
@@ -199,18 +209,9 @@ export const social = {
 export const calendarEmbedSrc =
   "https://calendar.google.com/calendar/embed?src=rql9mdaclft4gc0uvm5oh2lb99gg327j%40import.calendar.google.com&mode=AGENDA&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&color=%23234B3A";
 
-// --- Featured events (edit as things change) ------------------------------
-export const events = [
-  {
-    title: "Biblical Mediterranean Cruise",
-    when: "Summer 2027",
-    blurb:
-      "Travel with Calvary Chapel of Hammonton through the lands of the New Testament, hosted with Stephen's Gate Tours.",
-    href: "https://mayfairtravel.wetravel.com/trips/summer-2027-cc-hammonton-biblical-mediterranean-cruise-stephen-s-gate-tours-0325083818",
-    cta: "See the Itinerary",
-    tag: "Travel",
-  },
-];
+// --- Extra homepage announcements (optional) ------------------------------
+//  Anything with sign-ups or artwork belongs in `registrations` above.
+export const events = [];
 
 // --- Latest message (edit weekly, or wire to YouTube later) ---------------
 export const latestMessage = {

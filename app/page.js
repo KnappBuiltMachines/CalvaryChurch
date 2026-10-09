@@ -20,13 +20,12 @@ const PLUGGED_IN = [
     alt: "Kids watching a children's ministry program",
   },
   {
-    title: "Discipleship & Baptism",
-    body: "New to following Jesus, or ready to go deeper? We'll walk with you.",
+    title: "Baptism",
+    body: "Ready to publicly declare your faith in Jesus? Sign up to be baptized.",
     href: churchCenter.forms.discipled,
-    cta: "Get Discipled",
+    cta: "Sign Up for Baptism",
     image: "/home/baptism.jpg",
-    alt: "A water baptism at Calvary Chapel of Hammonton",
-    position: "center 40%",
+    alt: "Baptism — sign in here",
   },
   {
     title: "Prayer & Groups",
@@ -96,12 +95,11 @@ export default function Home() {
       {/* 2. SERVICE TIMES BAND */}
       <section className="home-band">
         <div className="wrap home-band-inner">
-          <h2>Join us this Sunday!</h2>
           <div className="home-band-times">
             {site.services.map((s) => (
               <span key={s.day}><span className="lbl">{s.day}</span> <strong>{s.time}</strong></span>
             ))}
-            <span>{site.address.line1}, Hammonton</span>
+            <span>{site.address.line1}, {site.address.line2}</span>
           </div>
           <Link href="/visit" className="btn btn-primary home-band-btn">Plan Your Visit <IcArrow width={16} height={16} /></Link>
         </div>

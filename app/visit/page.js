@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, churchCenter } from "../site";
+import { site } from "../site";
 import { PageHeader, SectionHead } from "../../components/ui";
 import { IcClock, IcPin, IcCoffee, IcKids, IcMap } from "../../components/icons";
 
@@ -44,7 +44,6 @@ export default function Visit() {
               </ul>
               <div className="hero-actions" style={{ justifyContent: "flex-start", marginTop: 28 }}>
                 <a href={directions} className="btn btn-primary">Get Directions</a>
-                <a href={churchCenter.forms.contact} className="btn btn-ghost">Tell Us You&rsquo;re Coming</a>
               </div>
             </div>
             <div className="map-frame">

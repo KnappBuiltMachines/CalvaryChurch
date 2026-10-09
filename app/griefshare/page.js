@@ -1,6 +1,5 @@
 import { site } from "../site";
 import { PageHeader, SectionHead } from "../../components/ui";
-import { IcHeart } from "../../components/icons";
 
 export const metadata = {
   title: "GriefShare",
@@ -22,7 +21,10 @@ export default function GriefShare() {
       <section className="section">
         <div className="wrap">
           <div className="split">
-            <div className="split-panel" aria-hidden="true"><IcHeart /></div>
+            <div className="split-panel split-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/griefshare/griefshare-group.jpg" alt="A GriefShare group meeting together" />
+            </div>
             <div>
               <SectionHead eyebrow="What it is" title="A place to grieve honestly." />
               <p style={{ color: "var(--muted)", fontSize: 18 }}>

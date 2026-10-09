@@ -19,8 +19,10 @@ export default function Watch() {
       <section className="section">
         <div className="wrap">
           <div className="watch-card">
-            <a className="watch-thumb" href={latestMessage.watchUrl} aria-label="Play the latest message">
-              <IcPlay width={54} height={54} />
+            <a className="watch-thumb watch-photo" href={latestMessage.watchUrl} aria-label="Play the latest message">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/watch/worship.jpg" alt="The worship team leading a Sunday service at Calvary Chapel of Hammonton" />
+              <span className="home-play" aria-hidden="true"><IcPlay width={28} height={28} /></span>
             </a>
             <div className="watch-meta">
               <span className="eyebrow">{latestMessage.series}</span>

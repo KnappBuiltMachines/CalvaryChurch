@@ -776,3 +776,17 @@ img { max-width: 100%; display: block; }
 
 /* Featured badge sits bottom-left so it doesn't cover titles in event artwork */
 .reg-featured { top: auto; bottom: 12px; }
+
+/* ---------- Photo thumbnails (Watch, GriefShare) ---------- */
+.watch-card { grid-template-columns: minmax(0, 1.1fr) 1fr; }
+.watch-photo { position: relative; min-height: 300px; overflow: hidden; }
+.watch-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.watch-photo .home-play svg { width: 28px; height: 28px; }
+.watch-photo:hover .home-play { transform: translate(-50%, -50%) scale(1.06); }
+.split-photo { position: relative; overflow: hidden; border-radius: 16px; min-height: 0; aspect-ratio: 1092 / 596; box-shadow: var(--shadow); }
+.split-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) { .split-photo { min-height: 0; } }
+@media (max-width: 900px) {
+  .watch-card { grid-template-columns: 1fr; }
+  .watch-photo { min-height: 220px; }
+}
