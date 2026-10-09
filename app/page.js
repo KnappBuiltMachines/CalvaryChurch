@@ -14,8 +14,8 @@ const PLUGGED_IN = [
   {
     title: "Children's Ministry",
     body: "A safe, warm, joyful place where kids learn who Jesus is while you worship.",
-    href: "/ministries",
-    cta: "Learn More",
+    href: churchCenter.forms.children,
+    cta: "Sign Up",
     image: "/home/kids.jpg",
     alt: "Kids watching a children's ministry program",
   },
