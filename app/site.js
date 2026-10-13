@@ -82,11 +82,14 @@ export const everyOrgGiving =
 
 export const registrations = [
   {
-    title: "Women\u2019s Ministry Fall Fiesta",
-    when: "Saturday, October 24, 2026 \u00b7 11:00am \u2013 2:00pm",
-    blurb: "A Calvary Chapel of Hammonton women\u2019s ministry gathering with guest speaker Martha Cornell.",
-    image: "/events/fall-fiesta-2026.jpg",
-    href: `${CC}/registrations/events/3863149`,
+    title: "Operation Christmas Child Shoebox Packing Party",
+    when: "Friday, November 13, 2026 \u00b7 6:00pm \u2013 8:00pm",
+    blurb:
+      "Help pack shoebox gifts for Samaritan\u2019s Purse. Bring donated items or boxes you\u2019ve packed at home \u2014 let\u2019s fill as many as we can. Refreshments served.",
+    image: "/events/shoebox-packing-party-2026.jpg",
+    href: `${CC}/calendar/event/231740171`,
+    tag: "Event",
+    cta: "Event Details",
     open: true,
   },
   {
@@ -99,6 +102,14 @@ export const registrations = [
     href: "https://www.cc-gc.org/marriage-conference/",
     tag: "Tickets Available",
     cta: "Get Tickets",
+    open: true,
+  },
+  {
+    title: "Women\u2019s Ministry Fall Fiesta",
+    when: "Saturday, October 24, 2026 \u00b7 11:00am \u2013 2:00pm",
+    blurb: "A Calvary Chapel of Hammonton women\u2019s ministry gathering with guest speaker Martha Cornell.",
+    image: "/events/fall-fiesta-2026.jpg",
+    href: `${CC}/registrations/events/3863149`,
     open: true,
   },
   {
