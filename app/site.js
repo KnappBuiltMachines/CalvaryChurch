@@ -113,15 +113,6 @@ export const registrations = [
     open: true,
   },
   {
-    title: "Homeschool Co-Op 2026–2027",
-    when: "Thursdays · Sept 17 – Nov 19, 2026",
-    blurb:
-      "Learning and fellowship for homeschool families, 9:30am–1:00pm. Please register every adult and child attending; $20 per family each semester covers materials.",
-    image: "/events/homeschool-coop-2026-2027.jpg",
-    href: `${CC}/registrations/events/3812136`,
-    open: true,
-  },
-  {
     title: "AWANA 2026\u20132027",
     when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
