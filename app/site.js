@@ -93,6 +93,17 @@ export const registrations = [
     open: true,
   },
   {
+    title: "OCC Shoebox Drop-Off Location",
+    when: "November 16 \u2013 23, 2026",
+    blurb:
+      "Calvary Chapel of Hammonton is an Operation Christmas Child drop-off location. Volunteer to receive shoeboxes from area churches and pack them into cartons for shipping. Dinner provided each evening.",
+    image: "/events/occ-drop-off-location-2026.jpg",
+    href: `${CC}/registrations/events/3952339`,
+    tag: "Volunteers Needed",
+    cta: "Sign Up to Serve",
+    open: true,
+  },
+  {
     title: "God’s Design Marriage Conference",
     when: "Saturday, November 14, 2026 · 9:00am",
     blurb:
@@ -113,11 +124,32 @@ export const registrations = [
     open: true,
   },
   {
+    title: "Pie & Praise Night",
+    when: "Friday, October 30, 2026 \u00b7 7:00pm \u2013 9:00pm",
+    blurb: "A fun night of worship and fellowship. Bring a yummy pie to share!",
+    image: "/events/pie-and-praise-night-2026.jpg",
+    href: `${CC}/calendar/event/239764641`,
+    tag: "Event",
+    cta: "Event Details",
+    open: true,
+  },
+  {
     title: "AWANA 2026\u20132027",
     when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
     image: "/events/awana-2026-2027.jpg",
     href: `${CC}/registrations/events/3716027`,
+    open: true,
+  },
+  {
+    title: "GriefShare",
+    when: "Tuesdays \u00b7 1:00pm \u2013 3:00pm or 6:00pm \u2013 8:00pm \u00b7 Sep 15 \u2013 Dec 8, 2026",
+    blurb:
+      "A grief recovery support group for anyone who has lost a loved one. Join the afternoon or evening group at the church.",
+    image: "/events/griefshare-2026.jpg",
+    href: "https://find.griefshare.org/ministries/199420",
+    tag: "Support Group",
+    cta: "Learn More",
     open: true,
   },
   {
