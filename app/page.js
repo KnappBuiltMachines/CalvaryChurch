@@ -51,7 +51,7 @@ function SmartLink({ href, ...props }) {
 }
 
 export default function Home() {
-  // Open registrations first, then featured events. Two cards max + the calendar card.
+  // First three registrations by date (site.js sorts them), then the calendar card.
   const announcements = [
     ...registrations
       .filter((r) => r.open)

@@ -62,7 +62,9 @@ export const everyOrgGiving =
 //
 //  TO ADD an event:     copy a block below, change the fields, commit.
 //  TO REMOVE an event:  delete its block (or set  open: false  to gray it out).
-//  TO REORDER:          drag blocks up or down. Top of list shows first.
+//  ORDER:  Cards sort themselves by  start  (the event's first date, written
+//          "YYYY-MM-DD"). The home page shows the first three. Block order
+//          in this list doesn't matter.
 //
 //  href   Open the event in Church Center and copy the URL from the address
 //         bar. It looks like:  .../registrations/events/3532994
@@ -70,6 +72,9 @@ export const everyOrgGiving =
 //  image  Save the event artwork from Church Center into  public/events/
 //         then reference it here as  "/events/your-file.jpg"
 //         Leave it out entirely and the card shows an icon instead.
+//
+//  start  The event's first date as "YYYY-MM-DD" - used only for sorting.
+//         Leave it out and the card goes to the end.
 //
 //  Optional fields:
 //    tag       Badge text. Default "Registration Open".
@@ -80,9 +85,10 @@ export const everyOrgGiving =
 //  Commit to `main` and Vercel redeploys in about a minute.
 // =============================================================================
 
-export const registrations = [
+const registrationList = [
   {
     title: "Operation Christmas Child Shoebox Packing Party",
+    start: "2026-11-13",
     when: "Friday, November 13, 2026 \u00b7 6:00pm \u2013 8:00pm",
     blurb:
       "Help pack shoebox gifts for Samaritan\u2019s Purse. Bring donated items or boxes you\u2019ve packed at home \u2014 let\u2019s fill as many as we can. Refreshments served.",
@@ -94,6 +100,7 @@ export const registrations = [
   },
   {
     title: "OCC Shoebox Drop-Off Location",
+    start: "2026-11-16",
     when: "November 16 \u2013 23, 2026",
     blurb:
       "Calvary Chapel of Hammonton is an Operation Christmas Child drop-off location. Volunteer to receive shoeboxes from area churches and pack them into cartons for shipping. Dinner provided each evening.",
@@ -105,6 +112,7 @@ export const registrations = [
   },
   {
     title: "God’s Design Marriage Conference",
+    start: "2026-11-14",
     when: "Saturday, November 14, 2026 · 9:00am",
     blurb:
       "A one-day conference with Calvary Chapel Gloucester County on God’s design for marriage. Pastor Vince & Dianne are among the speakers. Lunch and childcare provided.",
@@ -117,6 +125,7 @@ export const registrations = [
   },
   {
     title: "Women\u2019s Ministry Fall Fiesta",
+    start: "2026-10-24",
     when: "Saturday, October 24, 2026 \u00b7 11:00am \u2013 2:00pm",
     blurb: "A Calvary Chapel of Hammonton women\u2019s ministry gathering with guest speaker Martha Cornell.",
     image: "/events/fall-fiesta-2026.jpg",
@@ -125,6 +134,7 @@ export const registrations = [
   },
   {
     title: "Pie & Praise Night",
+    start: "2026-10-30",
     when: "Friday, October 30, 2026 \u00b7 7:00pm \u2013 9:00pm",
     blurb: "A fun night of worship and fellowship. Bring a yummy pie to share!",
     image: "/events/pie-and-praise-night-2026.jpg",
@@ -135,6 +145,7 @@ export const registrations = [
   },
   {
     title: "AWANA 2026\u20132027",
+    start: "2026-09-02",
     when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
     image: "/events/awana-2026-2027.jpg",
@@ -142,18 +153,29 @@ export const registrations = [
     open: true,
   },
   {
-    title: "GriefShare",
-    when: "Tuesdays \u00b7 1:00pm \u2013 3:00pm or 6:00pm \u2013 8:00pm \u00b7 Sep 15 \u2013 Dec 8, 2026",
+    title: "GriefShare: Surviving the Holidays",
+    start: "2026-11-15",
+    when: "Sunday, November 15, 2026 \u00b7 1:00pm ET",
     blurb:
-      "A grief recovery support group for anyone who has lost a loved one. Join the afternoon or evening group at the church.",
+      "A one-time GriefShare event with practical help for anyone facing the holidays after losing a loved one. A short video, small group discussion, and light refreshments. $12 includes a survival guide; scholarships available.",
     image: "/events/griefshare-2026.jpg",
-    href: "https://find.griefshare.org/ministries/199420",
-    tag: "Support Group",
-    cta: "Learn More",
+    href: "https://find.griefshare.org/events/295618",
+    tag: "Event",
+    cta: "Event Details",
+    open: true,
+  },
+  {
+    title: "Winter Blast",
+    start: "2027-01-21",
+    when: "January 21 \u2013 23, 2027",
+    blurb: "A Jr. & Sr. High youth winter event packed with activities, winter fun, and good food. Thursday through Saturday, $35.",
+    image: "/events/winter-blast-2027.jpg",
+    href: `${CC}/registrations/events/3964102`,
     open: true,
   },
   {
     title: "Biblical Mediterranean Cruise",
+    start: "2027-06-01",
     when: "Summer 2027",
     blurb:
       "Travel with Calvary Chapel of Hammonton through the lands of the New Testament, hosted with Stephen's Gate Tours.",
@@ -164,6 +186,11 @@ export const registrations = [
     open: true,
   },
 ];
+
+// Shown in date order (by `start`) on /events; the home page shows the first three.
+export const registrations = [...registrationList].sort((a, b) =>
+  (a.start || "9999").localeCompare(b.start || "9999")
+);
 
 // =============================================================================
 //  ★ STAFF PAGE ON/OFF
