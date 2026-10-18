@@ -22,7 +22,7 @@ export const site = {
   phone: "609.704.8778",
   phoneHref: "tel:+16097048778",
   email: "info@cchammonton.org",
-  officeHours: "Monday to Thursday, 9:00am \u2013 1:00pm",
+  officeHours: "Hours vary \u2014 please call first",
 
   services: [
     { day: "Sundays", time: "9:00am & 10:30am" },

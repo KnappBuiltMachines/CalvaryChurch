@@ -97,11 +97,16 @@ export default function Home() {
       <section className="home-band">
         <div className="wrap home-band-inner">
           <div className="home-band-times">
+            <span className="home-band-title">Church Services</span>
             {site.services.map((s) => (
               <span key={s.day}><span className="lbl">{s.day}</span> <strong>{s.time}</strong></span>
             ))}
             <span>{site.address.line1}, {site.address.line2}</span>
           </div>
+          <p className="home-band-office">
+            Office hours vary &mdash; please call first (<a href={site.phoneHref}>{site.phone}</a>) or email{" "}
+            <a href={`mailto:${site.email}`}>{site.email}</a>.
+          </p>
         </div>
       </section>
 
