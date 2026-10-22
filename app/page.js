@@ -2,6 +2,8 @@ import Link from "next/link";
 import { site, churchCenter, registrations, events, latestMessage } from "./site";
 import { SectionHead } from "../components/ui";
 import { IcArrow, IcCalendar, IcPlay } from "../components/icons";
+import PhotoStrip from "../components/PhotoStrip";
+import { getStripPhotos } from "../lib/stripPhotos";
 
 // =============================================================================
 //  HOME PAGE
@@ -51,6 +53,9 @@ function SmartLink({ href, ...props }) {
 }
 
 export default function Home() {
+  // Every photo in public/photo-strip/ — just upload more to that folder.
+  const stripPhotos = getStripPhotos();
+
   // First three registrations by date (site.js sorts them), then the calendar card.
   const announcements = [
     ...registrations
@@ -109,6 +114,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* PHOTO STRIP — pictures from public/photo-strip/ (hidden if the folder is empty) */}
+      <PhotoStrip photos={stripPhotos} />
 
       {/* 3. ANNOUNCEMENTS & UPDATES */}
       <section className="section">
