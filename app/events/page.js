@@ -1,4 +1,7 @@
-import { registrations, calendarEmbedSrc, churchCenter } from "../site";
+import { upcomingRegistrations, calendarEmbedSrc, churchCenter } from "../site";
+
+// Rebuild hourly so past events drop off on their own.
+export const revalidate = 3600;
 import { PageHeader, SectionHead } from "../../components/ui";
 import RegistrationList from "../../components/RegistrationList";
 
@@ -20,7 +23,7 @@ export default function Events() {
       <section className="section">
         <div className="wrap">
           <SectionHead center eyebrow="Open registrations" title="Sign up for what's next." />
-          <RegistrationList items={registrations} />
+          <RegistrationList items={upcomingRegistrations()} />
         </div>
       </section>
 
