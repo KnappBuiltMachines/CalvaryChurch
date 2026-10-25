@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { site, churchCenter, registrations, events, latestMessage } from "./site";
+import { site, churchCenter, homeRegistrations, events, latestMessage } from "./site";
+
+// Rebuild hourly so past events drop off and the next ones move up on their own.
+export const revalidate = 3600;
 import { SectionHead } from "../components/ui";
 import { IcArrow, IcCalendar, IcPlay } from "../components/icons";
 import PhotoStrip from "../components/PhotoStrip";
@@ -56,10 +59,9 @@ export default function Home() {
   // Every photo in public/photo-strip/ — just upload more to that folder.
   const stripPhotos = getStripPhotos();
 
-  // First three registrations by date (site.js sorts them), then the calendar card.
+  // Next three upcoming events by date (see homeRegistrations in site.js), then the calendar card.
   const announcements = [
-    ...registrations
-      .filter((r) => r.open)
+    ...homeRegistrations()
       .map((r) => ({
         title: r.title, when: r.when, blurb: r.blurb, href: r.href, image: r.image,
         position: r.position, featured: r.featured,

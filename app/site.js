@@ -76,6 +76,10 @@ export const everyOrgGiving =
 //  start  The event's first date as "YYYY-MM-DD" - used only for sorting.
 //         Leave it out and the card goes to the end.
 //
+//  end    Optional. Last date for multi-day events, "YYYY-MM-DD". Once the
+//         end date (or the start date, if there's no end) has passed, the
+//         card hides itself automatically - no need to delete old events.
+//
 //  Optional fields:
 //    tag       Badge text. Default "Registration Open".
 //    cta       Link text.  Default "Register".
@@ -86,6 +90,17 @@ export const everyOrgGiving =
 // =============================================================================
 
 const registrationList = [
+  {
+    title: "Intro to Discipleship",
+    start: "2026-11-09",
+    end: "2026-11-30",
+    when: "Mondays, November 9 \u2013 30, 2026 \u00b7 7:00pm \u2013 8:30pm",
+    blurb:
+      "The \u201cYour Life in Christ\u201d workshop \u2014 discover what comes with a saving relationship with Jesus Christ. Free.",
+    image: "https://registrations.planningcenteronline.com/signups/3975909/logo",
+    href: `${CC}/registrations/events/3975909`,
+    open: true,
+  },
   {
     title: "Operation Christmas Child Shoebox Packing Party",
     start: "2026-11-13",
@@ -101,6 +116,7 @@ const registrationList = [
   {
     title: "OCC Shoebox Drop-Off Location",
     start: "2026-11-16",
+    end: "2026-11-23",
     when: "November 16 \u2013 23, 2026",
     blurb:
       "Calvary Chapel of Hammonton is an Operation Christmas Child drop-off location. Volunteer to receive shoeboxes from area churches and pack them into cartons for shipping. Dinner provided each evening.",
@@ -146,6 +162,7 @@ const registrationList = [
   {
     title: "AWANA 2026\u20132027",
     start: "2026-09-02",
+    end: "2027-05-26",
     when: "September 2, 2026 \u2013 May 26, 2027",
     blurb: "Weekly clubs where kids memorize Scripture, play hard, and grow in faith.",
     image: "/events/awana-2026-2027.jpg",
@@ -167,6 +184,7 @@ const registrationList = [
   {
     title: "Winter Blast",
     start: "2027-01-21",
+    end: "2027-01-23",
     when: "January 21 \u2013 23, 2027",
     blurb: "A Jr. & Sr. High youth winter event packed with activities, winter fun, and good food. Thursday through Saturday, $35.",
     image: "/events/winter-blast-2027.jpg",
@@ -187,10 +205,29 @@ const registrationList = [
   },
 ];
 
-// Shown in date order (by `start`) on /events; the home page shows the first three.
-export const registrations = [...registrationList].sort((a, b) =>
-  (a.start || "9999").localeCompare(b.start || "9999")
-);
+// Today's date in Hammonton as "YYYY-MM-DD".
+export function todayET() {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+}
+
+// Events whose last day has passed drop off automatically. Shown in date
+// order (by `start`) on /events.
+export function upcomingRegistrations(today = todayET()) {
+  return registrationList
+    .filter((r) => !r.start || (r.end || r.start) >= today)
+    .sort((a, b) => (a.start || "9999").localeCompare(b.start || "9999"));
+}
+
+// Home page: the next three that haven't started yet, soonest first.
+// Already-running events (like AWANA) fill in only if there aren't three.
+export function homeRegistrations(today = todayET(), count = 3) {
+  const list = upcomingRegistrations(today).filter((r) => r.open);
+  const notStarted = list.filter((r) => !r.start || r.start >= today);
+  const running = list.filter((r) => r.start && r.start < today);
+  return [...notStarted, ...running].slice(0, count);
+}
+
+export const registrations = upcomingRegistrations();
 
 // =============================================================================
 //  ★ STAFF PAGE ON/OFF
