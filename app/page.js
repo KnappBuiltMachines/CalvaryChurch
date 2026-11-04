@@ -183,11 +183,11 @@ export default function Home() {
           </div>
           <div className="home-collage">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="tall" src="/home/worship.jpg" alt="Worship on a Sunday morning" loading="lazy" />
+            <img className="tall" src="/home/worship.jpg" alt="Greeting the church family at the Welcome Home entrance" loading="lazy" style={{ objectPosition: "30% center" }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/home/womens-gathering.jpg" alt="Women of the church gathered together" loading="lazy" />
+            <img src="/home/womens-gathering.jpg" alt="AWANA T&amp;T leaders" loading="lazy" style={{ objectPosition: "center 20%" }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/home/fellowship-men.jpg" alt="Church family fellowship" loading="lazy" style={{ objectPosition: "center 25%" }} />
+            <img src="/home/fellowship-men.jpg" alt="Men of the church gathered on stage" loading="lazy" style={{ objectPosition: "center 70%" }} />
           </div>
         </div>
       </section>
