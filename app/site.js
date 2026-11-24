@@ -91,6 +91,43 @@ export const everyOrgGiving =
 
 const registrationList = [
   {
+    title: "Holiday Schedule",
+    start: "2026-11-25",
+    end: "2026-12-24",
+    when: "Thanksgiving: Wed., November 25 · Christmas Eve: Thu., December 24",
+    blurb:
+      "The church is closed Wednesday, November 25 for Thanksgiving. Join us Christmas Eve, December 24, for our 6:00pm service.",
+    image: "/events/holiday-schedule-2026.jpg",
+    position: "center 20%",
+    href: `${CC}/calendar`,
+    tag: "Announcement",
+    cta: "View Calendar",
+    open: true,
+  },
+  {
+    title: "Dinner in Bethlehem",
+    start: "2026-12-03",
+    when: "Thursday, December 3, 2026 · 6:30pm – 8:30pm",
+    blurb:
+      "An evening of fellowship, Christmas vignettes, and an Israeli/Mediterranean-style cover-dish supper. Free for adults (13 and up). Sign up to bring a dish or help with set-up, serving, or clean-up.",
+    image: "/events/dinner-in-bethlehem-2026.jpg",
+    href: `${CC}/registrations/events/4027222`,
+    open: true,
+  },
+  {
+    title: "100 Days of Worship with Stone Silo Music",
+    start: "2026-12-09",
+    when: "Wednesday, December 9, 2026 · 7:00pm",
+    blurb:
+      "Stone Silo Music is leading worship 100 days in a row, from September 16 through Christmas Eve — and Day 85 is here at Calvary Chapel of Hammonton.",
+    image: "/events/100-days-of-worship-2026.jpg",
+    position: "center top",
+    href: `${CC}/calendar`,
+    tag: "Event",
+    cta: "View Calendar",
+    open: true,
+  },
+  {
     title: "Intro to Discipleship",
     start: "2026-11-09",
     end: "2026-11-30",
